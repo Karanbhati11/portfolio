@@ -1,26 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import logo2 from '../assets/img/logo/logo-2.png';
+import logo2 from "../assets/img/logo/logo-2.png";
 
-import ClientLogo1 from '../assets/img/client/client-logo-1.png';
-import ClientLogo2 from '../assets/img/client/client-logo-2.png';
-import ClientLogo3 from '../assets/img/client/client-logo-3.png';
-import ClientLogo4 from '../assets/img/client/client-logo-4.png';
-import ParsonImg1 from '../assets/img/parsonal-info/parson-img-1.png';
+import ClientLogo1 from "../assets/img/client/client-logo-1.png";
+import ClientLogo2 from "../assets/img/client/client-logo-2.png";
+import ClientLogo3 from "../assets/img/client/client-logo-3.png";
+import ClientLogo4 from "../assets/img/client/client-logo-4.png";
+import ParsonImg1 from "../assets/img/parsonal-info/parson-img-1.png";
 
-import pageBg1 from '../assets/img/bg/page-bg-1.jpg';
-import pageBgDark2 from '../assets/img/bg/page-bg-dark-2.jpg';
+import pageBg1 from "../assets/img/bg/page-bg-1.jpg";
+import pageBgDark2 from "../assets/img/bg/page-bg-dark-2.jpg";
 
 import { Link } from "react-router-dom";
 
-
 const HomePage = () => {
     const [ isDarkMode, setIsDarkMode ] = useState(false);
+    // const [ isLoading, setIsLoading ] = useState(true); // State for loader
 
     useEffect(() => {
+        // // Simulate loading process
+        // setTimeout(() => {
+        //     setIsLoading(false); // Hide loader after some time
+        // }, 3000); // Adjust duration as needed
+
         const loadScript = (src) => {
             return new Promise((resolve, reject) => {
-                const script = document.createElement('script');
+                const script = document.createElement("script");
                 script.src = src;
                 script.async = true;
                 script.onload = resolve;
@@ -31,9 +36,9 @@ const HomePage = () => {
 
         const loadCSS = (href) => {
             return new Promise((resolve, reject) => {
-                const link = document.createElement('link');
+                const link = document.createElement("link");
                 link.href = href;
-                link.rel = 'stylesheet';
+                link.rel = "stylesheet";
                 link.onload = resolve;
                 link.onerror = reject;
                 document.head.appendChild(link);
@@ -41,27 +46,27 @@ const HomePage = () => {
         };
 
         const cssFiles = [
-            'all.min.css',
-            'animate.min.css',
-            'bootstrap.min.css',
-            'fontawesome.min.css',
-            'jquery.modal.min.css',
-            'main.css',
-            'meanmenu.css',
-            'odometer.min.css',
-            'swipper.css'
+            "all.min.css",
+            "animate.min.css",
+            "bootstrap.min.css",
+            "fontawesome.min.css",
+            "jquery.modal.min.css",
+            "main.css",
+            "meanmenu.css",
+            "odometer.min.css",
+            "swipper.css",
         ];
 
         const jsFiles = [
-            'jquery.min.js',
-            'bootstrap.bundle.min.js',
-            'swipper-bundle.min.js',
-            'jquery.meanmenu.min.js',
-            'wow.min.js',
-            'odometer.min.js',
-            'jquery.modal.min.js',
-            'appear.min.js',
-            'main.js'
+            "jquery.min.js",
+            "bootstrap.bundle.min.js",
+            "swipper-bundle.min.js",
+            "jquery.meanmenu.min.js",
+            "wow.min.js",
+            "odometer.min.js",
+            "jquery.modal.min.js",
+            "appear.min.js",
+            "main.js",
         ];
 
         const loadCSSAndJSFiles = async () => {
@@ -72,34 +77,31 @@ const HomePage = () => {
                 for (const js of jsFiles) {
                     await loadScript(`./src/assets/js/${js}`);
                 }
-
             } catch (error) {
-                console.error('Error loading assets:', error);
+                console.error("Error loading assets:", error);
             }
         };
+
 
         loadCSSAndJSFiles();
 
         // Clean up on unmount
         return () => {
-            cssFiles.forEach(css => {
-                const link = document.querySelector(`link[href=".src/assets/css/${css}"]`); // Corrected path
+            cssFiles.forEach((css) => {
+                const link = document.querySelector(`link[href="./src/assets/css/${css}"]`); // Corrected path
                 link && link.parentNode.removeChild(link);
             });
-            jsFiles.forEach(js => {
-                const script = document.querySelector(`script[src=".src/assets/js/${js}"]`); // Corrected path
+            jsFiles.forEach((js) => {
+                const script = document.querySelector(`script[src="./src/assets/js/${js}"]`); // Corrected path
                 script && script.parentNode.removeChild(script);
             });
         };
     }, []);
 
-
-    // Function to toggle dark mode
+    // Toggle the dark mode state
     const toggleDarkMode = () => {
-        // Toggle the dark mode state
-        setIsDarkMode(prevMode => !prevMode);
+        setIsDarkMode(!isDarkMode);
     };
-
 
     useEffect(() => {
         const darktoggle = document.querySelector(".dark-btn-icon");
@@ -107,7 +109,7 @@ const HomePage = () => {
 
         // Function to toggle the dark theme
         const toggleDarkTheme = () => {
-            setIsDarkMode(prevMode => !prevMode); // Toggle the state
+            // setIsDarkMode(!isDarkMode); // Toggle the state
 
             // Toggle the class on the body element
             document.body.classList.toggle("dark-theme");
@@ -147,18 +149,26 @@ const HomePage = () => {
         };
     }, []);
 
+    // if (isLoading) {
+    //     return (
+    //         // PRELOADER START 
+    //         <div id="preloader">
+    //             <div className="loader_line"></div>
+    //         </div>
+    //         // PRELOADER END
+    //     );
+    // }
 
     return (
-        <div className={`page-wrapper home-1 ${isDarkMode ? 'dark-theme' : ''}`}
-            style={{ backgroundImage: `url(${isDarkMode ? './src/assets/img/bg/page-bg-dark-2.jpg' : './src/assets/img/bg/page-bg-1.jpg'})` }}
+        <div
+            className={`page-wrapper home-1 ${isDarkMode ? "dark-theme" : ""}`}
+            style={{
+                backgroundImage: `url(${isDarkMode
+                    ? "./src/assets/img/bg/page-bg-dark-2.jpg"
+                    : "./src/assets/img/bg/page-bg-1.jpg"
+                    })`
+            }}
         >
-
-            {/* PRELOADER */}
-            {/* <div id="preloader">
-                <div className="loader_line"></div>
-            </div> */}
-            {/* /PRELOADER */}
-
             {/* header-start */}
             <div className="bostami-header-area mb-30 z-index-5">
                 <div className="container">
@@ -177,8 +187,15 @@ const HomePage = () => {
                             <div className="col-6">
                                 <div className="bostami-header-menu-btn text-right">
                                     {/* Dark mode toggle button */}
-                                    <div className="dark-btn dark-btn-stored dark-btn-icon" onClick={toggleDarkMode}>
-                                        {isDarkMode ? <i className="fa-light fa-sun"></i> : <i className="fa-light fa-moon"></i>}
+                                    <div
+                                        className="dark-btn dark-btn-stored dark-btn-icon"
+                                        onClick={toggleDarkMode}
+                                    >
+                                        {isDarkMode ? (
+                                            <i className="fa-light fa-sun"></i>
+                                        ) : (
+                                            <i className="fa-light fa-moon"></i>
+                                        )}
                                     </div>
                                     <div className="menu-btn toggle_menu">
                                         <span></span>
@@ -192,8 +209,7 @@ const HomePage = () => {
 
                     {/* mobile menu */}
                     <div className="mobile-menu-wrap">
-                        <div className="mobile-menu mobile_menu">
-                        </div>
+                        <div className="mobile-menu mobile_menu"></div>
                     </div>
                 </div>
             </div>
@@ -205,7 +221,6 @@ const HomePage = () => {
                     <div className="col-xxl-3 col-xl-3">
                         <div className="bostami-parsonal-info-area">
                             <div className="bostami-parsonal-info-wrap">
-
                                 {/* <!-- img --> */}
                                 <div className="bostami-parsonal-info-img">
                                     <img src={ParsonImg1} alt="avatar" />
@@ -215,7 +230,9 @@ const HomePage = () => {
                                 <h4 className="bostami-parsonal-info-name">
                                     <a href="#">Bostami Hassan</a>
                                 </h4>
-                                <span className="bostami-parsonal-info-bio mb-15">Ui/Ux Designer</span>
+                                <span className="bostami-parsonal-info-bio mb-15">
+                                    Ui/Ux Designer
+                                </span>
 
                                 {/* <!-- socail link --> */}
                                 <ul className="bostami-parsonal-info-social-link mb-30">
@@ -252,7 +269,6 @@ const HomePage = () => {
                                             <p>+123 456 7890</p>
                                         </div>
                                     </div>
-
 
                                     <div className="bostami-parsonal-info-contact-item email">
                                         <div className="icon">
@@ -294,7 +310,6 @@ const HomePage = () => {
                                         download cv
                                     </a>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -303,29 +318,32 @@ const HomePage = () => {
                     {/* about-page-start */}
                     <div className="col-xxl-8 col-xl-9">
                         <div className="bostami-page-content-wrap">
-
                             {/* <!-- page title --> */}
                             <div className="section-wrapper pl-60 pr-60 pt-60">
                                 <div className="bostami-page-title-wrap mb-35">
                                     <h2 className="page-title">about</h2>
-                                    <p>I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web
-                                        development and print media. I enjoy turning complex problems into simple, beautiful
-                                        and intuitive designs.</p>
-                                    <p>My aim is to bring across your message and identity in the most creative way. I
-                                        created web design for many famous brand companies.</p>
+                                    <p>
+                                        I'm Creative Director and UI/UX Designer from Sydney,
+                                        Australia, working in web development and print media. I
+                                        enjoy turning complex problems into simple, beautiful and
+                                        intuitive designs.
+                                    </p>
+                                    <p>
+                                        My aim is to bring across your message and identity in the
+                                        most creative way. I created web design for many famous
+                                        brand companies.
+                                    </p>
                                 </div>
                             </div>
 
                             {/* <!-- what-do --> */}
-                            <div className="section-wrapper pl-60 pr-60">
-
+                            <div className="section-wrapper pl-60 pr-60 ">
                                 <div className="bostami-section-title-wrap mb-30">
                                     <h3 className="section-title">What I do!</h3>
                                 </div>
 
                                 <div className="bostami-what-do-wrap mb-30">
                                     <div className="row">
-
                                         {/* <!-- single item --> */}
                                         <div className="col-xxl-6 col-xl-6 col-lg-6">
                                             <div className="bostami-what-do-item bg-prink">
@@ -334,8 +352,10 @@ const HomePage = () => {
                                                 </div>
                                                 <div className="text">
                                                     <h4 className="title">Ui/Ux Design</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                                        euismod tincidunt volutpat.</p>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                                        elit, sed diam euismod tincidunt volutpat.
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -347,8 +367,10 @@ const HomePage = () => {
                                                 </div>
                                                 <div className="text">
                                                     <h4 className="title">App Development</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                                        euismod tincidunt volutpat.</p>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                                        elit, sed diam euismod tincidunt volutpat.
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -360,8 +382,10 @@ const HomePage = () => {
                                                 </div>
                                                 <div className="text">
                                                     <h4 className="title">Photography</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                                        euismod tincidunt volutpat.</p>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                                        elit, sed diam euismod tincidunt volutpat.
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -373,20 +397,19 @@ const HomePage = () => {
                                                 </div>
                                                 <div className="text">
                                                     <h4 className="title">Web Development</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                                        euismod tincidunt volutpat.</p>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                                        elit, sed diam euismod tincidunt volutpat.
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
-
                             </div>
 
                             {/* <!-- client --> */}
                             <div className="section-wrapper bg-light-white-2 pt-45 pb-60 pl-60 pr-60">
-
                                 <div className="bostami-section-title-wrap text-center mb-50">
                                     <h3 className="section-title">clinet</h3>
                                 </div>
@@ -394,42 +417,50 @@ const HomePage = () => {
                                 <div className="bostami-client-slider">
                                     <div className="swiper-container client_slide_active">
                                         <div className="swiper-wrapper">
-
                                             {/* <!-- single item --> */}
                                             <div className="swiper-slide">
-                                                <img className="bostami-client-slider-logo"
-                                                    src={ClientLogo1} alt="" />
+                                                <img
+                                                    className="bostami-client-slider-logo"
+                                                    src={ClientLogo1}
+                                                    alt=""
+                                                />
                                             </div>
 
                                             {/* <!-- single item --> */}
                                             <div className="swiper-slide">
-                                                <img className="bostami-client-slider-logo"
-                                                    src={ClientLogo2} alt="" />
+                                                <img
+                                                    className="bostami-client-slider-logo"
+                                                    src={ClientLogo2}
+                                                    alt=""
+                                                />
                                             </div>
 
                                             {/* <!-- single item --> */}
                                             <div className="swiper-slide">
-                                                <img className="bostami-client-slider-logo"
-                                                    src={ClientLogo3} alt="" />
+                                                <img
+                                                    className="bostami-client-slider-logo"
+                                                    src={ClientLogo3}
+                                                    alt=""
+                                                />
                                             </div>
 
                                             {/* <!-- single item --> */}
                                             <div className="swiper-slide">
-                                                <img className="bostami-client-slider-logo"
-                                                    src={ClientLogo4} alt="" />
+                                                <img
+                                                    className="bostami-client-slider-logo"
+                                                    src={ClientLogo4}
+                                                    alt=""
+                                                />
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
 
                             {/* <!-- footer copyright --> */}
                             <div className="footer-copyright text-center pt-25 pb-25">
                                 <span>© 2024 All Rights Reserved</span>
                             </div>
-
                         </div>
                     </div>
                     {/* about-page-end */}
@@ -497,7 +528,7 @@ const HomePage = () => {
             <script src="assets/js/jquery.modal.min.js"></script>
             <script src="assets/js/appear.min.js"></script>
             <script src="assets/js/main.js"></script>
-        </div>
+        </div >
     );
 };
 
