@@ -2,19 +2,20 @@ import React, { useEffect, useState } from "react";
 
 import logo2 from "../assets/img/logo/logo-2.png";
 
-import ClientLogo1 from "../assets/img/client/client-logo-1.png";
-import ClientLogo2 from "../assets/img/client/client-logo-2.png";
-import ClientLogo3 from "../assets/img/client/client-logo-3.png";
-import ClientLogo4 from "../assets/img/client/client-logo-4.png";
-import ParsonImg1 from "../assets/img/parsonal-info/parson-img-1.png";
-
-import pageBg1 from "../assets/img/bg/page-bg-1.jpg";
-import pageBgDark2 from "../assets/img/bg/page-bg-dark-2.jpg";
-
 import { Link } from "react-router-dom";
+import Header from "../components/Header";
+import ParsonalInfo from "../components/ParsonalInfo";
+import About from "../components/About";
+import Resume from "../components/Resume";
+import Portfolio from "../components/Portfolio";
+import PortfolioModal from "../components/PortfolioModal";
+import Contact from "../components/Contact";
+import MainMenu from "../components/MainMenu";
+import Blogs from "../components/Blogs";
 
 const HomePage = () => {
     const [ isDarkMode, setIsDarkMode ] = useState(false);
+    const [ activeComponent, setActiveComponent ] = useState("about");
     // const [ isLoading, setIsLoading ] = useState(true); // State for loader
 
     useEffect(() => {
@@ -159,6 +160,24 @@ const HomePage = () => {
     //     );
     // }
 
+    const [ modalOpen, setModalOpen ] = useState(false); // State to manage modal open/close
+
+    // Function to handle opening modal
+    const openModal = () => {
+        setModalOpen(true);
+    };
+
+    // Function to handle closing modal
+    const closeModal = () => {
+        console.info("user is closing modal");
+        setModalOpen(false);
+    };
+
+    const handleActiveComponent = (name) => {
+        setActiveComponent(name);
+    };
+
+
     return (
         <div
             className={`page-wrapper home-1 ${isDarkMode ? "dark-theme" : ""}`}
@@ -170,11 +189,11 @@ const HomePage = () => {
             }}
         >
             {/* header-start */}
-            <div className="bostami-header-area mb-30 z-index-5">
+            {/* <div className="bostami-header-area mb-30 z-index-5" style={{ border: "2px solid red" }}>
                 <div className="container">
                     <div className="bostami-header-wrap">
                         <div className="row align-items-center">
-                            {/* logo */}
+                            //  logo 
                             <div className="col-6">
                                 <div className="bostami-header-logo">
                                     <Link className="site-logo" to="/">
@@ -183,10 +202,10 @@ const HomePage = () => {
                                 </div>
                             </div>
 
-                            {/* menu btn */}
+                            //  menu btn 
                             <div className="col-6">
                                 <div className="bostami-header-menu-btn text-right">
-                                    {/* Dark mode toggle button */}
+                                    //  Dark mode toggle button 
                                     <div
                                         className="dark-btn dark-btn-stored dark-btn-icon"
                                         onClick={toggleDarkMode}
@@ -207,26 +226,28 @@ const HomePage = () => {
                         </div>
                     </div>
 
-                    {/* mobile menu */}
+                    //  mobile menu 
                     <div className="mobile-menu-wrap">
                         <div className="mobile-menu mobile_menu"></div>
                     </div>
                 </div>
-            </div>
+            </div> */}
+
+            <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
             {/* header-end */}
 
-            <div className="container z-index-3">
+            <div className="container z-index-3" style={{ border: "2px solid red" }}>
                 <div className="row">
                     {/* parsonal-info-start */}
-                    <div className="col-xxl-3 col-xl-3">
+                    {/* <div className="col-xxl-3 col-xl-3">
                         <div className="bostami-parsonal-info-area">
                             <div className="bostami-parsonal-info-wrap">
-                                {/* <!-- img --> */}
+                                // img
                                 <div className="bostami-parsonal-info-img">
                                     <img src={ParsonImg1} alt="avatar" />
                                 </div>
 
-                                {/* <!-- name --> */}
+                                // name
                                 <h4 className="bostami-parsonal-info-name">
                                     <a href="#">Bostami Hassan</a>
                                 </h4>
@@ -234,7 +255,7 @@ const HomePage = () => {
                                     Ui/Ux Designer
                                 </span>
 
-                                {/* <!-- socail link --> */}
+                                // socail link
                                 <ul className="bostami-parsonal-info-social-link mb-30">
                                     <li>
                                         <a href="#" className="facebook">
@@ -258,7 +279,7 @@ const HomePage = () => {
                                     </li>
                                 </ul>
 
-                                {/* <!-- contact --> */}
+                                // contact
                                 <div className="bostami-parsonal-info-contact mb-30">
                                     <div className="bostami-parsonal-info-contact-item phone">
                                         <div className="icon">
@@ -301,7 +322,7 @@ const HomePage = () => {
                                     </div>
                                 </div>
 
-                                {/* <!-- cv button --> */}
+                                // cv button
                                 <div className="bostami-parsonal-info-btn">
                                     <a className="btn-1" href="#">
                                         <span className="icon">
@@ -312,13 +333,14 @@ const HomePage = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
+                    <ParsonalInfo />
                     {/* personal-info-end */}
 
                     {/* about-page-start */}
-                    <div className="col-xxl-8 col-xl-9">
+                    {/* <div className="col-xxl-8 col-xl-9" style={{ border: "2px solid green" }}>
                         <div className="bostami-page-content-wrap">
-                            {/* <!-- page title --> */}
+                            // page title
                             <div className="section-wrapper pl-60 pr-60 pt-60">
                                 <div className="bostami-page-title-wrap mb-35">
                                     <h2 className="page-title">about</h2>
@@ -336,7 +358,7 @@ const HomePage = () => {
                                 </div>
                             </div>
 
-                            {/* <!-- what-do --> */}
+                            // what-do
                             <div className="section-wrapper pl-60 pr-60 ">
                                 <div className="bostami-section-title-wrap mb-30">
                                     <h3 className="section-title">What I do!</h3>
@@ -344,7 +366,7 @@ const HomePage = () => {
 
                                 <div className="bostami-what-do-wrap mb-30">
                                     <div className="row">
-                                        {/* <!-- single item --> */}
+                                        // single item
                                         <div className="col-xxl-6 col-xl-6 col-lg-6">
                                             <div className="bostami-what-do-item bg-prink">
                                                 <div className="icon">
@@ -359,7 +381,7 @@ const HomePage = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        {/* <!-- single item --> */}
+                                        // single item
                                         <div className="col-xxl-6 col-xl-6 col-lg-6">
                                             <div className="bostami-what-do-item bg-catkrill">
                                                 <div className="icon">
@@ -374,7 +396,7 @@ const HomePage = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        {/* <!-- single item --> */}
+                                        // single item
                                         <div className="col-xxl-6 col-xl-6 col-lg-6">
                                             <div className="bostami-what-do-item  bg-catkrill">
                                                 <div className="icon">
@@ -389,7 +411,7 @@ const HomePage = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        {/* <!-- single item --> */}
+                                        // single item
                                         <div className="col-xxl-6 col-xl-6 col-lg-6">
                                             <div className="bostami-what-do-item bg-prink bg-blue">
                                                 <div className="icon">
@@ -408,7 +430,7 @@ const HomePage = () => {
                                 </div>
                             </div>
 
-                            {/* <!-- client --> */}
+                            // client
                             <div className="section-wrapper bg-light-white-2 pt-45 pb-60 pl-60 pr-60">
                                 <div className="bostami-section-title-wrap text-center mb-50">
                                     <h3 className="section-title">clinet</h3>
@@ -417,7 +439,7 @@ const HomePage = () => {
                                 <div className="bostami-client-slider">
                                     <div className="swiper-container client_slide_active">
                                         <div className="swiper-wrapper">
-                                            {/* <!-- single item --> */}
+                                            // single item
                                             <div className="swiper-slide">
                                                 <img
                                                     className="bostami-client-slider-logo"
@@ -426,7 +448,7 @@ const HomePage = () => {
                                                 />
                                             </div>
 
-                                            {/* <!-- single item --> */}
+                                            // single item
                                             <div className="swiper-slide">
                                                 <img
                                                     className="bostami-client-slider-logo"
@@ -435,7 +457,7 @@ const HomePage = () => {
                                                 />
                                             </div>
 
-                                            {/* <!-- single item --> */}
+                                            // single item
                                             <div className="swiper-slide">
                                                 <img
                                                     className="bostami-client-slider-logo"
@@ -444,7 +466,7 @@ const HomePage = () => {
                                                 />
                                             </div>
 
-                                            {/* <!-- single item --> */}
+                                            // single item
                                             <div className="swiper-slide">
                                                 <img
                                                     className="bostami-client-slider-logo"
@@ -457,29 +479,42 @@ const HomePage = () => {
                                 </div>
                             </div>
 
-                            {/* <!-- footer copyright --> */}
+                            // footer copyright
                             <div className="footer-copyright text-center pt-25 pb-25">
                                 <span>© 2024 All Rights Reserved</span>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     {/* about-page-end */}
 
+
+                    {
+                        activeComponent == "about" ?
+                            <About /> :
+                            activeComponent == "resume" ?
+                                <Resume /> :
+                                activeComponent == "works" ?
+                                    <Portfolio openModal={openModal} /> :
+                                activeComponent == "blogs" ?
+                                    <Blogs openModal={openModal} /> :
+                                    <Contact />
+                    }
+
                     {/* main-menu-start */}
-                    <div className="col-xxl-1 d-xxl-block d-none">
+                    {/* <div className="col-xxl-1 d-xxl-block d-none">
                         <div className="bostami-main-menu-wrap">
                             <nav className="bastami-main-menu main_menu">
                                 <ul>
                                     <li className="active">
-                                        <a href="index.html">
+                                        <a onClick={() => setActiveComponent("about")}>
                                             <span>
                                                 <i className="fa-light fa-address-card"></i>
                                             </span>
-                                            about
+                                            About
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="resume.html">
+                                        <a onClick={() => setActiveComponent("resume")}>
                                             <span>
                                                 <i className="fa-light fa-file-user"></i>
                                             </span>
@@ -487,7 +522,7 @@ const HomePage = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="portfolio.html">
+                                        <a onClick={() => setActiveComponent("works")}>
                                             <span>
                                                 <i className="fa-light fa-briefcase"></i>
                                             </span>
@@ -495,7 +530,7 @@ const HomePage = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="blog.html">
+                                        <a onClick={() => setActiveComponent("blogs")}>
                                             <span>
                                                 <i className="fa-light fa-newspaper"></i>
                                             </span>
@@ -503,7 +538,7 @@ const HomePage = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="contact.html">
+                                        <a onClick={() => setActiveComponent("contact")}>
                                             <span>
                                                 <i className="fa-light fa-address-book"></i>
                                             </span>
@@ -513,10 +548,14 @@ const HomePage = () => {
                                 </ul>
                             </nav>
                         </div>
-                    </div>
+                    </div> */}
+
+                    <MainMenu handleActiveComponent={handleActiveComponent} activeComponent={activeComponent} />
                     {/* main-menu-end */}
                 </div>
             </div>
+
+            {/* <PortfolioModal modalOpen={modalOpen} closeModal={closeModal} /> */}
 
             {/* JS here */}
             <script src="assets/js/jquery.min.js"></script>
