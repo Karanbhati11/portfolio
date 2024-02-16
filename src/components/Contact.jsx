@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Copyright from './Copyright';
 
 export default function Contact() {
      const [ formData, setFormData ] = useState({

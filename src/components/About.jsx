@@ -4,10 +4,11 @@ import ClientLogo1 from "../assets/img/client/client-logo-1.png";
 import ClientLogo2 from "../assets/img/client/client-logo-2.png";
 import ClientLogo3 from "../assets/img/client/client-logo-3.png";
 import ClientLogo4 from "../assets/img/client/client-logo-4.png";
+import Copyright from './Copyright';
 
 export default function About() {
      return (
-          <div className="col-xxl-8 col-xl-9" style={{ border: "2px solid green" }}>
+          <div className="col-xxl-8 col-xl-9">
                <div className="bostami-page-content-wrap">
                     {/* <!-- page title --> */}
                     <div className="section-wrapper pl-60 pr-60 pt-60">

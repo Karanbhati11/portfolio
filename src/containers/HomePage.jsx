@@ -236,7 +236,7 @@ const HomePage = () => {
             <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
             {/* header-end */}
 
-            <div className="container z-index-3" style={{ border: "2px solid red" }}>
+            <div className="container z-index-3">
                 <div className="row">
                     {/* parsonal-info-start */}
                     {/* <div className="col-xxl-3 col-xl-3">
@@ -495,9 +495,9 @@ const HomePage = () => {
                                 <Resume /> :
                                 activeComponent == "works" ?
                                     <Portfolio openModal={openModal} /> :
-                                activeComponent == "blogs" ?
-                                    <Blogs openModal={openModal} /> :
-                                    <Contact />
+                                    activeComponent == "blogs" ?
+                                        <Blogs openModal={openModal} /> :
+                                        <Contact />
                     }
 
                     {/* main-menu-start */}
