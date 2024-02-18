@@ -13,10 +13,10 @@ export default function ParsonalInfo() {
 
                          {/* name */}
                          <h4 className="bostami-parsonal-info-name">
-                              <a href="#">Bostami Hassan</a>
+                              <a href="#">Ankit Pakhale</a>
                          </h4>
                          <span className="bostami-parsonal-info-bio mb-15">
-                              Ui/Ux Designer
+                              Python Fullstack Developer
                          </span>
 
                          {/* socail link */}
@@ -51,7 +51,7 @@ export default function ParsonalInfo() {
                                    </div>
                                    <div className="text">
                                         <span>Phone</span>
-                                        <p>+123 456 7890</p>
+                                        <p>+91 940 732 8187</p>
                                    </div>
                               </div>
 
@@ -61,7 +61,7 @@ export default function ParsonalInfo() {
                                    </div>
                                    <div className="text">
                                         <span>Email</span>
-                                        <p>example@mail.com</p>
+                                        <p>akp3067@mail.com</p>
                                    </div>
                               </div>
 
@@ -71,7 +71,7 @@ export default function ParsonalInfo() {
                                    </div>
                                    <div className="text">
                                         <span>Location</span>
-                                        <p>Hong kong china</p>
+                                        <p>Ahmedabad, GJ, India</p>
                                    </div>
                               </div>
 
@@ -81,7 +81,7 @@ export default function ParsonalInfo() {
                                    </div>
                                    <div className="text">
                                         <span>Birthday</span>
-                                        <p>May 27, 1990</p>
+                                        <p>Mar 10, 2000</p>
                                    </div>
                               </div>
                          </div>

@@ -1,0 +1,22 @@
+[
+     {
+          "title": "Web Design",
+          "percentage": "85",
+          "className": "progress-bg-1"
+     },
+     {
+          "title": "Mobile App",
+          "percentage": "55",
+          "className": "progress-bg-2"
+     },
+     {
+          "title": "Illustrator",
+          "percentage": "65",
+          "className": "progress-bg-3"
+     },
+     {
+          "title": "Photoshop",
+          "percentage": "72",
+          "className": "progress-bg-4"
+     }
+]

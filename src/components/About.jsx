@@ -1,10 +1,11 @@
 import React from 'react'
 
-import ClientLogo1 from "../assets/img/client/client-logo-1.png";
-import ClientLogo2 from "../assets/img/client/client-logo-2.png";
-import ClientLogo3 from "../assets/img/client/client-logo-3.png";
-import ClientLogo4 from "../assets/img/client/client-logo-4.png";
 import Copyright from './Copyright';
+import ServiceItem from '../data/ServiceItem';
+import ClientLogoSlider from '../data/ClientLogoSlider';
+
+import clientLogoData from '../Jsons/clientLogoData.json';
+import serviceItemData from '../Jsons/serviceItemData.json';
 
 export default function About() {
      return (
@@ -36,66 +37,15 @@ export default function About() {
 
                          <div className="bostami-what-do-wrap mb-30">
                               <div className="row">
-                                   {/* <!-- single item --> */}
-                                   <div className="col-xxl-6 col-xl-6 col-lg-6">
-                                        <div className="bostami-what-do-item bg-prink">
-                                             <div className="icon">
-                                                  <i className="fa-light fa-swatchbook"></i>
-                                             </div>
-                                             <div className="text">
-                                                  <h4 className="title">Ui/Ux Design</h4>
-                                                  <p>
-                                                       Lorem ipsum dolor sit amet, consectetuer adipiscing
-                                                       elit, sed diam euismod tincidunt volutpat.
-                                                  </p>
-                                             </div>
-                                        </div>
-                                   </div>
-                                   {/* <!-- single item --> */}
-                                   <div className="col-xxl-6 col-xl-6 col-lg-6">
-                                        <div className="bostami-what-do-item bg-catkrill">
-                                             <div className="icon">
-                                                  <i className="fa-regular fa-grid-2"></i>
-                                             </div>
-                                             <div className="text">
-                                                  <h4 className="title">App Development</h4>
-                                                  <p>
-                                                       Lorem ipsum dolor sit amet, consectetuer adipiscing
-                                                       elit, sed diam euismod tincidunt volutpat.
-                                                  </p>
-                                             </div>
-                                        </div>
-                                   </div>
-                                   {/* <!-- single item --> */}
-                                   <div className="col-xxl-6 col-xl-6 col-lg-6">
-                                        <div className="bostami-what-do-item  bg-catkrill">
-                                             <div className="icon">
-                                                  <i className="fa-regular fa-camera-retro"></i>
-                                             </div>
-                                             <div className="text">
-                                                  <h4 className="title">Photography</h4>
-                                                  <p>
-                                                       Lorem ipsum dolor sit amet, consectetuer adipiscing
-                                                       elit, sed diam euismod tincidunt volutpat.
-                                                  </p>
-                                             </div>
-                                        </div>
-                                   </div>
-                                   {/* <!-- single item --> */}
-                                   <div className="col-xxl-6 col-xl-6 col-lg-6">
-                                        <div className="bostami-what-do-item bg-prink bg-blue">
-                                             <div className="icon">
-                                                  <i className="fa-regular fa-code"></i>
-                                             </div>
-                                             <div className="text">
-                                                  <h4 className="title">Web Development</h4>
-                                                  <p>
-                                                       Lorem ipsum dolor sit amet, consectetuer adipiscing
-                                                       elit, sed diam euismod tincidunt volutpat.
-                                                  </p>
-                                             </div>
-                                        </div>
-                                   </div>
+                                   {serviceItemData.map((item, index) => (
+                                        <ServiceItem
+                                             key={index}
+                                             iconClass={item.iconClass}
+                                             title={item.title}
+                                             description={item.description}
+                                             backgroundColor={item.backgroundColor}
+                                        />
+                                   ))}
                               </div>
                          </div>
                     </div>
@@ -109,8 +59,7 @@ export default function About() {
                          <div className="bostami-client-slider">
                               <div className="swiper-container client_slide_active">
                                    <div className="swiper-wrapper">
-                                        {/* <!-- single item --> */}
-                                        <div className="swiper-slide">
+                                        {/* <div className="swiper-slide">
                                              <img
                                                   className="bostami-client-slider-logo"
                                                   src={ClientLogo1}
@@ -118,7 +67,6 @@ export default function About() {
                                              />
                                         </div>
 
-                                        {/* <!-- single item --> */}
                                         <div className="swiper-slide">
                                              <img
                                                   className="bostami-client-slider-logo"
@@ -127,7 +75,6 @@ export default function About() {
                                              />
                                         </div>
 
-                                        {/* <!-- single item --> */}
                                         <div className="swiper-slide">
                                              <img
                                                   className="bostami-client-slider-logo"
@@ -136,14 +83,16 @@ export default function About() {
                                              />
                                         </div>
 
-                                        {/* <!-- single item --> */}
                                         <div className="swiper-slide">
                                              <img
                                                   className="bostami-client-slider-logo"
                                                   src={ClientLogo4}
                                                   alt=""
                                              />
-                                        </div>
+                                        </div> */}
+
+                                        <ClientLogoSlider logos={clientLogoData} />
+
                                    </div>
                               </div>
                          </div>

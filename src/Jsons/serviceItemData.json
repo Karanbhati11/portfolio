@@ -1,0 +1,26 @@
+[
+     {
+          "iconClass": "fa-light fa-swatchbook",
+          "title": "Ui/Ux Design",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.",
+          "backgroundColor": "bg-prink"
+     },
+     {
+          "iconClass": "fa-regular fa-grid-2",
+          "title": "App Development",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.",
+          "backgroundColor": "bg-catkrill"
+     },
+     {
+          "iconClass": "fa-regular fa-camera-retro",
+          "title": "Photography",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.",
+          "backgroundColor": "bg-catkrill"
+     },
+     {
+          "iconClass": "fa-regular fa-code",
+          "title": "Web Development",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.",
+          "backgroundColor": "bg-prink"
+     }
+]

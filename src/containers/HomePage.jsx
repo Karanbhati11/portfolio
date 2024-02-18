@@ -14,185 +14,184 @@ import MainMenu from "../components/MainMenu";
 import Blogs from "../components/Blogs";
 
 const HomePage = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [activeComponent, setActiveComponent] = useState("about");
-  // const [ isLoading, setIsLoading ] = useState(true); // State for loader
+    const [ isDarkMode, setIsDarkMode ] = useState(false);
+    const [ activeComponent, setActiveComponent ] = useState("resume");
+    // const [ isLoading, setIsLoading ] = useState(true); // State for loader
 
-  useEffect(() => {
-    // // Simulate loading process
-    // setTimeout(() => {
-    //     setIsLoading(false); // Hide loader after some time
-    // }, 3000); // Adjust duration as needed
+    useEffect(() => {
+        // // Simulate loading process
+        // setTimeout(() => {
+        //     setIsLoading(false); // Hide loader after some time
+        // }, 3000); // Adjust duration as needed
 
-    const loadScript = (src) => {
-      return new Promise((resolve, reject) => {
-        const script = document.createElement("script");
-        script.src = src;
-        script.async = true;
-        script.onload = resolve;
-        script.onerror = reject;
-        document.body.appendChild(script);
-      });
+        const loadScript = (src) => {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement("script");
+                script.src = src;
+                script.async = true;
+                script.onload = resolve;
+                script.onerror = reject;
+                document.body.appendChild(script);
+            });
+        };
+
+        const loadCSS = (href) => {
+            return new Promise((resolve, reject) => {
+                const link = document.createElement("link");
+                link.href = href;
+                link.rel = "stylesheet";
+                link.onload = resolve;
+                link.onerror = reject;
+                document.head.appendChild(link);
+            });
+        };
+
+        const cssFiles = [
+            "all.min.css",
+            "animate.min.css",
+            "bootstrap.min.css",
+            "fontawesome.min.css",
+            "jquery.modal.min.css",
+            "main.css",
+            "meanmenu.css",
+            "odometer.min.css",
+            "swipper.css",
+        ];
+
+        const jsFiles = [
+            "jquery.min.js",
+            "bootstrap.bundle.min.js",
+            "swipper-bundle.min.js",
+            "jquery.meanmenu.min.js",
+            "wow.min.js",
+            "odometer.min.js",
+            "jquery.modal.min.js",
+            "appear.min.js",
+            "main.js",
+        ];
+
+        const loadCSSAndJSFiles = async () => {
+            try {
+                for (const css of cssFiles) {
+                    await loadCSS(`./src/assets/css/${css}`);
+                }
+                for (const js of jsFiles) {
+                    await loadScript(`./src/assets/js/${js}`);
+                }
+            } catch (error) {
+                console.error("Error loading assets:", error);
+            }
+        };
+
+        loadCSSAndJSFiles();
+
+        // Clean up on unmount
+        return () => {
+            cssFiles.forEach((css) => {
+                const link = document.querySelector(
+                    `link[href="./src/assets/css/${css}"]`
+                ); // Corrected path
+                link && link.parentNode.removeChild(link);
+            });
+            jsFiles.forEach((js) => {
+                const script = document.querySelector(
+                    `script[src="./src/assets/js/${js}"]`
+                ); // Corrected path
+                script && script.parentNode.removeChild(script);
+            });
+        };
+    }, []);
+
+    // Toggle the dark mode state
+    const toggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
     };
 
-    const loadCSS = (href) => {
-      return new Promise((resolve, reject) => {
-        const link = document.createElement("link");
-        link.href = href;
-        link.rel = "stylesheet";
-        link.onload = resolve;
-        link.onerror = reject;
-        document.head.appendChild(link);
-      });
-    };
+    useEffect(() => {
+        const darktoggle = document.querySelector(".dark-btn-icon");
+        const home1bgimg = document.querySelector(".page-wrapper");
 
-    const cssFiles = [
-      "all.min.css",
-      "animate.min.css",
-      "bootstrap.min.css",
-      "fontawesome.min.css",
-      "jquery.modal.min.css",
-      "main.css",
-      "meanmenu.css",
-      "odometer.min.css",
-      "swipper.css",
-    ];
+        // Function to toggle the dark theme
+        const toggleDarkTheme = () => {
+            // setIsDarkMode(!isDarkMode); // Toggle the state
 
-    const jsFiles = [
-      "jquery.min.js",
-      "bootstrap.bundle.min.js",
-      "swipper-bundle.min.js",
-      "jquery.meanmenu.min.js",
-      "wow.min.js",
-      "odometer.min.js",
-      "jquery.modal.min.js",
-      "appear.min.js",
-      "main.js",
-    ];
+            // Toggle the class on the body element
+            document.body.classList.toggle("dark-theme");
 
-    const loadCSSAndJSFiles = async () => {
-      try {
-        for (const css of cssFiles) {
-          await loadCSS(`./src/assets/css/${css}`);
+            // Store the preference in local storage
+            const isDarkTheme = document.body.classList.contains("dark-theme");
+            localStorage.setItem("darkTheme", isDarkTheme);
+
+            if (isDarkTheme) {
+                darktoggle.src = "assets/img/icon/sun-icon.png";
+                home1bgimg.style.backgroundImage =
+                    "url('assets/img/bg/page-bg-dark-1.jpg')";
+            } else {
+                darktoggle.src = "assets/img/icon/mon-icon.png";
+                home1bgimg.style.backgroundImage = "url('assets/img/bg/page-bg-1.jpg')";
+            }
+        };
+
+        // Check if the user preference is already stored in local storage
+        const isDarkTheme = localStorage.getItem("darkTheme") === "true";
+
+        // Apply the dark theme if the preference is set to true
+        if (isDarkTheme) {
+            setIsDarkMode(true); // Update state
+            document.body.classList.add("dark-theme");
+            darktoggle.src = "assets/img/icon/sun-icon.png";
+            home1bgimg.style.backgroundImage =
+                "url('assets/img/bg/page-bg-dark-1.jpg')";
         }
-        for (const js of jsFiles) {
-          await loadScript(`./src/assets/js/${js}`);
-        }
-      } catch (error) {
-        console.error("Error loading assets:", error);
-      }
+
+        // Attach click event to the specified div
+        darktoggle.addEventListener("click", toggleDarkTheme);
+
+        // Clean up on unmount
+        return () => {
+            darktoggle.removeEventListener("click", toggleDarkTheme);
+        };
+    }, []);
+
+    // if (isLoading) {
+    //     return (
+    //         // PRELOADER START
+    //         <div id="preloader">
+    //             <div className="loader_line"></div>
+    //         </div>
+    //         // PRELOADER END
+    //     );
+    // }
+
+    const [ modalOpen, setModalOpen ] = useState(false); // State to manage modal open/close
+
+    // Function to handle opening modal
+    const openModal = () => {
+        setModalOpen(true);
     };
 
-    loadCSSAndJSFiles();
-
-    // Clean up on unmount
-    return () => {
-      cssFiles.forEach((css) => {
-        const link = document.querySelector(
-          `link[href="./src/assets/css/${css}"]`
-        ); // Corrected path
-        link && link.parentNode.removeChild(link);
-      });
-      jsFiles.forEach((js) => {
-        const script = document.querySelector(
-          `script[src="./src/assets/js/${js}"]`
-        ); // Corrected path
-        script && script.parentNode.removeChild(script);
-      });
-    };
-  }, []);
-
-  // Toggle the dark mode state
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
-  useEffect(() => {
-    const darktoggle = document.querySelector(".dark-btn-icon");
-    const home1bgimg = document.querySelector(".page-wrapper");
-
-    // Function to toggle the dark theme
-    const toggleDarkTheme = () => {
-      // setIsDarkMode(!isDarkMode); // Toggle the state
-
-      // Toggle the class on the body element
-      document.body.classList.toggle("dark-theme");
-
-      // Store the preference in local storage
-      const isDarkTheme = document.body.classList.contains("dark-theme");
-      localStorage.setItem("darkTheme", isDarkTheme);
-
-      if (isDarkTheme) {
-        darktoggle.src = "assets/img/icon/sun-icon.png";
-        home1bgimg.style.backgroundImage =
-          "url('assets/img/bg/page-bg-dark-1.jpg')";
-      } else {
-        darktoggle.src = "assets/img/icon/mon-icon.png";
-        home1bgimg.style.backgroundImage = "url('assets/img/bg/page-bg-1.jpg')";
-      }
+    // Function to handle closing modal
+    const closeModal = () => {
+        console.info("user is closing modal");
+        setModalOpen(false);
     };
 
-    // Check if the user preference is already stored in local storage
-    const isDarkTheme = localStorage.getItem("darkTheme") === "true";
-
-    // Apply the dark theme if the preference is set to true
-    if (isDarkTheme) {
-      setIsDarkMode(true); // Update state
-      document.body.classList.add("dark-theme");
-      darktoggle.src = "assets/img/icon/sun-icon.png";
-      home1bgimg.style.backgroundImage =
-        "url('assets/img/bg/page-bg-dark-1.jpg')";
-    }
-
-    // Attach click event to the specified div
-    darktoggle.addEventListener("click", toggleDarkTheme);
-
-    // Clean up on unmount
-    return () => {
-      darktoggle.removeEventListener("click", toggleDarkTheme);
+    const handleActiveComponent = (name) => {
+        setActiveComponent(name);
     };
-  }, []);
 
-  // if (isLoading) {
-  //     return (
-  //         // PRELOADER START
-  //         <div id="preloader">
-  //             <div className="loader_line"></div>
-  //         </div>
-  //         // PRELOADER END
-  //     );
-  // }
-
-  const [modalOpen, setModalOpen] = useState(false); // State to manage modal open/close
-
-  // Function to handle opening modal
-  const openModal = () => {
-    setModalOpen(true);
-  };
-
-  // Function to handle closing modal
-  const closeModal = () => {
-    console.info("user is closing modal");
-    setModalOpen(false);
-  };
-
-  const handleActiveComponent = (name) => {
-    setActiveComponent(name);
-  };
-
-  return (
-    <div
-      className={`page-wrapper home-1 ${isDarkMode ? "dark-theme" : ""}`}
-      style={{
-        backgroundImage: `url(${
-          isDarkMode
-            ? "./src/assets/img/bg/page-bg-dark-2.jpg"
-            : "./src/assets/img/bg/page-bg-1.jpg"
-        })`,
-      }}
-    >
-      {/* header-start */}
-      {/* <div className="bostami-header-area mb-30 z-index-5" style={{ border: "2px solid red" }}>
+    return (
+        <div
+            className={`page-wrapper home-1 ${isDarkMode ? "dark-theme" : ""}`}
+            style={{
+                backgroundImage: `url(${isDarkMode
+                        ? "./src/assets/img/bg/page-bg-dark-2.jpg"
+                        : "./src/assets/img/bg/page-bg-1.jpg"
+                    })`,
+            }}
+        >
+            {/* header-start */}
+            {/* <div className="bostami-header-area mb-30 z-index-5" style={{ border: "2px solid red" }}>
                 <div className="container">
                     <div className="bostami-header-wrap">
                         <div className="row align-items-center">
@@ -236,13 +235,13 @@ const HomePage = () => {
                 </div>
             </div> */}
 
-      <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
-      {/* header-end */}
+            <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+            {/* header-end */}
 
-      <div className="container z-index-3">
-        <div className="row">
-          {/* parsonal-info-start */}
-          {/* <div className="col-xxl-3 col-xl-3">
+            <div className="container z-index-3">
+                <div className="row">
+                    {/* parsonal-info-start */}
+                    {/* <div className="col-xxl-3 col-xl-3">
                         <div className="bostami-parsonal-info-area">
                             <div className="bostami-parsonal-info-wrap">
                                 // img
@@ -337,11 +336,11 @@ const HomePage = () => {
                             </div>
                         </div>
                     </div> */}
-          <ParsonalInfo />
-          {/* personal-info-end */}
+                    <ParsonalInfo />
+                    {/* personal-info-end */}
 
-          {/* about-page-start */}
-          {/* <div className="col-xxl-8 col-xl-9" style={{ border: "2px solid green" }}>
+                    {/* about-page-start */}
+                    {/* <div className="col-xxl-8 col-xl-9" style={{ border: "2px solid green" }}>
                         <div className="bostami-page-content-wrap">
                             // page title
                             <div className="section-wrapper pl-60 pr-60 pt-60">
@@ -488,22 +487,22 @@ const HomePage = () => {
                             </div>
                         </div>
                     </div> */}
-          {/* about-page-end */}
+                    {/* about-page-end */}
 
-          {activeComponent == "about" ? (
-            <About />
-          ) : activeComponent == "resume" ? (
-            <Resume />
-          ) : activeComponent == "works" ? (
-            <Portfolio openModal={openModal} />
-          ) : activeComponent == "blogs" ? (
-            <Blogs openModal={openModal} />
-          ) : (
-            <Contact />
-          )}
+                    {activeComponent == "about" ? (
+                        <About />
+                    ) : activeComponent == "resume" ? (
+                        <Resume />
+                    ) : activeComponent == "works" ? (
+                        <Portfolio openModal={openModal} />
+                    ) : activeComponent == "blogs" ? (
+                        <Blogs openModal={openModal} />
+                    ) : (
+                        <Contact />
+                    )}
 
-          {/* main-menu-start */}
-          {/* <div className="col-xxl-1 d-xxl-block d-none">
+                    {/* main-menu-start */}
+                    {/* <div className="col-xxl-1 d-xxl-block d-none">
                         <div className="bostami-main-menu-wrap">
                             <nav className="bastami-main-menu main_menu">
                                 <ul>
@@ -552,28 +551,28 @@ const HomePage = () => {
                         </div>
                     </div> */}
 
-          <MainMenu
-            handleActiveComponent={handleActiveComponent}
-            activeComponent={activeComponent}
-          />
-          {/* main-menu-end */}
+                    <MainMenu
+                        handleActiveComponent={handleActiveComponent}
+                        activeComponent={activeComponent}
+                    />
+                    {/* main-menu-end */}
+                </div>
+            </div>
+
+            <PortfolioModal modalOpen={modalOpen} closeModal={closeModal} />
+
+            {/* JS here */}
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
+            <script src="assets/js/swipper-bundle.min.js"></script>
+            <script src="assets/js/jquery.meanmenu.min.js"></script>
+            <script src="assets/js/wow.min.js"></script>
+            <script src="assets/js/odometer.min.js"></script>
+            <script src="assets/js/jquery.modal.min.js"></script>
+            <script src="assets/js/appear.min.js"></script>
+            <script src="assets/js/main.js"></script>
         </div>
-      </div>
-
-      <PortfolioModal modalOpen={modalOpen} closeModal={closeModal} />
-
-      {/* JS here */}
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/bootstrap.bundle.min.js"></script>
-      <script src="assets/js/swipper-bundle.min.js"></script>
-      <script src="assets/js/jquery.meanmenu.min.js"></script>
-      <script src="assets/js/wow.min.js"></script>
-      <script src="assets/js/odometer.min.js"></script>
-      <script src="assets/js/jquery.modal.min.js"></script>
-      <script src="assets/js/appear.min.js"></script>
-      <script src="assets/js/main.js"></script>
-    </div>
-  );
+    );
 };
 
 export default HomePage;

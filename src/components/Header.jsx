@@ -1,15 +1,8 @@
-import React from "react";
+import React from 'react'
 import { Link } from "react-router-dom";
 import logo2 from "../assets/img/logo/logo-2.png";
 
 export default function Header({ toggleDarkMode, isDarkMode }) {
-  let menutoggole = document.querySelector(".toggle_menu");
-  let mobilemenu = document.querySelector(".mobile-menu");
-  const ToggleMenu = (e) => {
-    e.preventDefault();
-    menutoggole.classList.toggle("active");
-    mobilemenu.classList.toggle("active");
-  };
   return (
     <>
       <div className="bostami-header-area mb-30 z-index-5">
@@ -20,7 +13,12 @@ export default function Header({ toggleDarkMode, isDarkMode }) {
               <div className="col-6">
                 <div className="bostami-header-logo">
                   <Link className="site-logo" to="/">
-                    <img src={logo2} alt="" />
+                    {/* <img src={logo2} alt="" /> */}
+                    <div className="ap">
+                      <span className="ap-span-bold">a</span>
+                      <span className="ap-span-light">p</span>
+                      <span className="ap-span-light">.</span>
+                    </div>
                   </Link>
                 </div>
               </div>
@@ -39,7 +37,7 @@ export default function Header({ toggleDarkMode, isDarkMode }) {
                       <i className="fa-light fa-moon"></i>
                     )}
                   </div>
-                  <div className="menu-btn toggle_menu" onClick={ToggleMenu}>
+                  <div className="menu-btn toggle_menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -56,5 +54,5 @@ export default function Header({ toggleDarkMode, isDarkMode }) {
         </div>
       </div>
     </>
-  );
+  )
 }

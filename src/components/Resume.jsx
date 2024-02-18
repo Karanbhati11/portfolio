@@ -1,153 +1,96 @@
 import React from 'react'
 import Copyright from './Copyright'
+import ResumeBox from '../data/ResumeBox'
+import SkillBar from '../data/SkillBar'
+import educationData from '../Jsons/educationData.json'
+import experienceData from '../Jsons/experienceData.json'
+import skillData from '../Jsons/skillData.json'
+import knowledgeData from '../Jsons/knowledgeData.json'
 
 export default function Resume() {
      return (
-          <div class="col-xxl-8 col-xl-9">
-               <div class="bostami-page-content-wrap">
+          <div className="col-xxl-8 col-xl-9">
+               <div className="bostami-page-content-wrap">
 
                     {/* page title  */}
-                    <div class="section-wrapper pl-60 pr-60 pt-60">
-                         <div class="bostami-page-title-wrap mb-15">
-                              <h2 class="page-title">resume</h2>
+                    <div className="section-wrapper pl-60 pr-60 pt-60">
+                         <div className="bostami-page-title-wrap mb-15">
+                              <h2 className="page-title">resume</h2>
                          </div>
                     </div>
 
-                    <div class="section-wrapper pl-60 pr-60 mb-60">
-                         <div class="row">
+                    <div className="section-wrapper pl-60 pr-60 mb-60">
+                         <div className="row">
 
                               {/* education  */}
-                              <div class="col-xl-6 col-lg-7">
-                                   <div class="bostami-section-title-wrap mb-20">
-                                        <h4 class="section-title"><i class="fa-light fa-school"></i>Education</h4>
+                              <div className="col-xl-6 col-lg-7">
+                                   <div className="bostami-section-title-wrap mb-20">
+                                        <h4 className="section-title"><i className="fa-light fa-school"></i>Education</h4>
                                    </div>
 
-                                   <div class="bostami-card-wrap">
-                                        <div class="bostami-card-item bg-prink mb-20">
-                                             <span class="card-subtitle">2021-2024</span>
-                                             <h6 class="card-title">Ph.D in Horriblensess <span>- University,</span></h6>
-                                             <p class="card-text">Los Angeles, CA</p>
-                                        </div>
-
-                                        <div class="bostami-card-item bg-catkrill mb-20">
-                                             <span class="card-subtitle">2017-2021</span>
-                                             <h6 class="card-title">Computer Science <span>- Imperialize</span></h6>
-                                             <p class="card-text">Technical Institute</p>
-                                        </div>
-
-                                        <div class="bostami-card-item bg-prink">
-                                             <span class="card-subtitle">2015-2017</span>
-                                             <h6 class="card-title">Graphic Designer <span>- Web Graphy,</span></h6>
-                                             <p class="card-text">Los Angeles, CA</p>
-                                        </div>
+                                   <div className="bostami-card-wrap">
+                                        {educationData.map((data, index) => (
+                                             <ResumeBox
+                                                  key={index}
+                                                  index={index}
+                                                  tenure={data.tenure}
+                                                  title={data.education}
+                                                  subtitle={data.location}
+                                             />
+                                        ))}
                                    </div>
-
-
-
                               </div>
 
                               {/* education  */}
-                              <div class="col-xl-6 col-lg-5">
-                                   <div class="bostami-section-title-wrap mb-20">
-                                        <h4 class="section-title"><i class="fa-light fa-briefcase"></i>experience</h4>
+                              <div className="col-xl-6 col-lg-5">
+                                   <div className="bostami-section-title-wrap mb-20">
+                                        <h4 className="section-title"><i className="fa-light fa-briefcase"></i>experience</h4>
                                    </div>
-
-                                   <div class="bostami-card-item bg-catkrill  mb-20">
-                                        <span class="card-subtitle">2019 - Present</span>
-                                        <h6 class="card-title">Sr. Software Tester</h6>
-                                        <p class="card-text">Google Inc.</p>
-                                   </div>
-
-                                   <div class="bostami-card-item bg-prink mb-20">
-                                        <span class="card-subtitle">2015-2017</span>
-                                        <h6 class="card-title">Cr. Web Developer</h6>
-                                        <p class="card-text">elite-themes24 ltd.</p>
-                                   </div>
-
-                                   <div class="bostami-card-item bg-catkrill ">
-                                        <span class="card-subtitle">2014 - 2015</span>
-                                        <h6 class="card-title">Jr. Web Developer</h6>
-                                        <p class="card-text">Creative Gigs.</p>
-                                   </div>
-
+                                   {experienceData.map((data, index) => (
+                                        <ResumeBox
+                                             key={index}
+                                             index={index + 1}
+                                             tenure={data.tenure}
+                                             title={data.position}
+                                             subtitle={data.company}
+                                        />
+                                   ))}
                               </div>
 
                          </div>
                     </div>
 
-                    <div class="section-wrapper bg-light-white-2 pt-70 pb-60 pl-60 pr-60">
-                         <div class="row">
+                    <div className="section-wrapper bg-light-white-2 pt-70 pb-60 pl-60 pr-60">
+                         <div className="row">
 
                               {/* skill  */}
-                              <div class="col-xl-6 col-lg-7">
-                                   <div class="bostami-section-title-wrap mb-20">
-                                        <h4 class="section-title">Working Skills</h4>
+                              <div className="col-xl-6 col-lg-7">
+                                   <div className="bostami-section-title-wrap mb-20">
+                                        <h4 className="section-title">Working Skills</h4>
                                    </div>
 
-                                   <div class="skill-bar-wrap">
-
-                                        <div class="skill-bar-item mb-30">
-                                             <div class="title-wrap">
-                                                  <h5 class="title">Web Design</h5>
-                                                  <span class="count">85%</span>
-                                             </div>
-                                             <div class="progress-bar-wrap">
-                                                  <div class="progress-line progress-bg-1" style={{ "width": "85%" }}>
-                                                  </div>
-                                             </div>
-                                        </div>
-
-                                        <div class="skill-bar-item mb-30">
-                                             <div class="title-wrap">
-                                                  <h5 class="title">Mobile App</h5>
-                                                  <span class="count">55%</span>
-                                             </div>
-                                             <div class="progress-bar-wrap">
-                                                  <div class="progress-line progress-bg-2" style={{ "width": "55%" }}>
-                                                  </div>
-                                             </div>
-                                        </div>
-
-                                        <div class="skill-bar-item mb-30">
-                                             <div class="title-wrap">
-                                                  <h5 class="title">Illustrator</h5>
-                                                  <span class="count">65%</span>
-                                             </div>
-                                             <div class="progress-bar-wrap">
-                                                  <div class="progress-line progress-bg-3" style={{ "width": "65%" }}>
-                                                  </div>
-                                             </div>
-                                        </div>
-
-                                        <div class="skill-bar-item">
-                                             <div class="title-wrap">
-                                                  <h5 class="title">Photoshope</h5>
-                                                  <span class="count">72%</span>
-                                             </div>
-                                             <div class="progress-bar-wrap">
-                                                  <div class="progress-line progress-bg-4" style={{ "width": "72%" }}>
-                                                  </div>
-                                             </div>
-                                        </div>
-
+                                   <div className="skill-bar-wrap">
+                                        {skillData.map((skills, index) => (
+                                             <SkillBar
+                                                  key={index}
+                                                  title={skills.title}
+                                                  percentage={skills.percentage}
+                                                  className={skills.className}
+                                             />
+                                        ))}
                                    </div>
-
                               </div>
 
                               {/* gk  */}
-                              <div class="col-xl-6 col-lg-5">
-                                   <div class="bostami-section-title-wrap mb-20">
-                                        <h4 class="section-title">Knowledges</h4>
+                              <div className="col-xl-6 col-lg-5">
+                                   <div className="bostami-section-title-wrap mb-20">
+                                        <h4 className="section-title">Knowledges</h4>
                                    </div>
 
-                                   <div class="knowledeges-item-wrap">
-                                        <span class="gk-item">Digital Design</span>
-                                        <span class="gk-item">Marketing</span>
-                                        <span class="gk-item">Communication</span>
-                                        <span class="gk-item">Social Media</span>
-                                        <span class="gk-item">Time Management</span>
-                                        <span class="gk-item">Flexibility</span>
-                                        <span class="gk-item">Print</span>
+                                   <div className="knowledeges-item-wrap">
+                                        {knowledgeData.map((data, index) => (
+                                             <span key={index} className="gk-item">{data}</span>
+                                        ))}
                                    </div>
                               </div>
                          </div>
