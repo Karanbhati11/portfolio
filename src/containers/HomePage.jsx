@@ -15,7 +15,7 @@ import Blogs from "../components/Blogs";
 
 const HomePage = () => {
     const [ isDarkMode, setIsDarkMode ] = useState(false);
-    const [ activeComponent, setActiveComponent ] = useState("resume");
+    const [ activeComponent, setActiveComponent ] = useState("about");
     // const [ isLoading, setIsLoading ] = useState(true); // State for loader
 
     useEffect(() => {

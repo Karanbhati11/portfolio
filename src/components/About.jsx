@@ -4,10 +4,16 @@ import Copyright from './Copyright';
 import ServiceItem from '../data/ServiceItem';
 import ClientLogoSlider from '../data/ClientLogoSlider';
 
-import clientLogoData from '../Jsons/clientLogoData.json';
 import serviceItemData from '../Jsons/serviceItemData.json';
 
+import ClientLogo1 from "../assets/img/client/client-logo-1.png";
+import ClientLogo2 from "../assets/img/client/client-logo-2.png";
+import ClientLogo3 from "../assets/img/client/client-logo-3.png";
+import ClientLogo4 from "../assets/img/client/client-logo-4.png";
+
 export default function About() {
+     const clientLogoData = [ ClientLogo1, ClientLogo2, ClientLogo3, ClientLogo4 ];
+
      return (
           <div className="col-xxl-8 col-xl-9">
                <div className="bostami-page-content-wrap">
@@ -92,7 +98,6 @@ export default function About() {
                                         </div> */}
 
                                         <ClientLogoSlider logos={clientLogoData} />
-
                                    </div>
                               </div>
                          </div>
