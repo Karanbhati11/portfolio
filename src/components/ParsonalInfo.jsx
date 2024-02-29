@@ -55,15 +55,17 @@ export default function ParsonalInfo() {
                                    </div>
                               </div>
 
+
                               <div className="bostami-parsonal-info-contact-item email">
                                    <div className="icon">
                                         <i className="fa-regular fa-envelope-open-text"></i>
                                    </div>
                                    <div className="text">
                                         <span>Email</span>
-                                        <p>akp3067@mail.com</p>
+                                        <p><a href="mailto:akp3067@mail.com?subject=We%20want%20to%20hire%20you.&body=Hi%20Ankit,%0D%0A%0D%0AWe%20found%20your%20profile%20interesting.%20When%20might%20you%20be%20free%20to%20talk%20about%20the%20stages%20of%20the%20hiring%20process%3F%0D%0AThanks">akp3067@mail.com</a></p>
                                    </div>
                               </div>
+
 
                               <div className="bostami-parsonal-info-contact-item location">
                                    <div className="icon">
