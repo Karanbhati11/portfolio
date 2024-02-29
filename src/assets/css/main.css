@@ -74,6 +74,62 @@ body {
   line-height: 28px;
 }
 
+/* ----------------- LOGO START ------------------ */
+
+.ap {
+  color: #1b1b1b;
+  text-align: left;
+  position: absolute;
+  left: 145px;
+  top: 28px;
+}
+
+.ap-span-bold {
+  color: #1b74e4;
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.ap-span-light {
+  color: #1b74e4;
+  font-size: 48px;
+  font-weight: 100;
+}
+
+.dark-theme .ap-span-bold {
+  color: #CCCCCC;
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.dark-theme .ap-span-light {
+  color: #CCCCCC;
+  font-size: 48px;
+  font-weight: 100;
+}
+
+.ap-dot {
+  background: #ff0000;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 65px;
+  top: 30px;
+}
+
+.dark-theme .ap-dot {
+  background: #00ff00;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 65px;
+  top: 30px;
+}
+
+/* ----------------- LOGO END ------------------ */
+
 .img,
 img {
   max-width: 100%;
@@ -3075,7 +3131,7 @@ only screen and (min-width: 768px) and (max-width: 991px),
   line-height: 24px;
   font-weight: 400;
   color: var(--common-black);
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   margin-bottom: 0;
 }
 

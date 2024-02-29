@@ -17,7 +17,7 @@ export default function Header({ toggleDarkMode, isDarkMode }) {
                     <div className="ap">
                       <span className="ap-span-bold">a</span>
                       <span className="ap-span-light">p</span>
-                      <span className="ap-span-light">.</span>
+                      <div className="ap-dot"></div>
                     </div>
                   </Link>
                 </div>

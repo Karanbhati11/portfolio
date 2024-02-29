@@ -181,12 +181,11 @@ const HomePage = () => {
     };
 
     return (
-        <div
-            className={`page-wrapper home-1 ${isDarkMode ? "dark-theme" : ""}`}
+        <div className={`page-wrapper home-1 ${isDarkMode ? "dark-theme" : ""}`}
             style={{
                 backgroundImage: `url(${isDarkMode
-                        ? "./src/assets/img/bg/page-bg-dark-2.jpg"
-                        : "./src/assets/img/bg/page-bg-1.jpg"
+                    ? "./src/assets/img/bg/page-bg-dark-2.jpg"
+                    : "./src/assets/img/bg/page-bg-1.jpg"
                     })`,
             }}
         >

@@ -4,6 +4,7 @@ export default function PortfolioModal({ modalOpen, closeModal }) {
   return (
     <div
       className={`modal portfolio-modal-box fade ${modalOpen ? "show" : ""}`}
+      id="portfolio-1"
       tabIndex="-1"
       role="dialog"
       style={{ display: modalOpen ? "block" : "none", zIndex: 9999 }}
