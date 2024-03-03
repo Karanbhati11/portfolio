@@ -8,7 +8,7 @@ export default function SkillBar({ title, percentage, className }) {
                     <span className="count">{`${percentage} %`}</span>
                </div>
                <div className="progress-bar-wrap">
-                    <div className={`progress-line ${className}`} style={{ "width": "72%" }}>
+                    <div className={`progress-line ${className}`} style={{ "width": `${percentage}%` }}>
                     </div>
                </div>
           </div>

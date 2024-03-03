@@ -32,7 +32,9 @@ CSS INDEX
 ******************************************************* 
 *************************************************************** */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@300;400;500;600;700;800;900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@300;400;500;600;700;800;900&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@300;400;500;600;700;800;900&family=Josefin+Sans&display=swap');
 
 :root {
   --common-white: #ffffff;
@@ -49,6 +51,8 @@ CSS INDEX
   --cyan: rgb(252, 244, 255);
   --rose: rgb(255, 240, 248);
   --yellow: rgb(254, 250, 240);
+  --font-primary: 'Josefin Sans', sans-serif;
+  --font-secondary: "Poppins", sans-serif;
 }
 
 :root .dark-theme {
@@ -63,10 +67,45 @@ CSS INDEX
   --light-white-2: #f8fbfb;
   --prink: #fff4f4;
   --catkrill: #eef5fa;
+  --font-primary: 'Josefin Sans', sans-serif;
+  --font-secondary: "Poppins", sans-serif;
 }
 
+/* ----------------- SCROLLBAR START ------------------ */
+/* For webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--body-text);
+  border-radius: 10px;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--heading-black);
+  transition: background 0.3s ease-in-out;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+  background: var(--body-text);
+  border-radius: 10px;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Handle on hover */
+.dark-theme ::-webkit-scrollbar-thumb:hover {
+  background: var(--prink);
+  transition: background 0.3s ease-in-out;
+}
+
+/* ----------------- SCROLLBAR END ------------------ */
+
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-primary);
   font-weight: 400;
   font-style: normal;
   color: var(--body-text);
@@ -82,6 +121,8 @@ body {
   position: absolute;
   left: 145px;
   top: 28px;
+  font-family: var(--font-secondary);
+  /* for logo only */
 }
 
 .ap-span-bold {
@@ -191,7 +232,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-primary);
   color: var(--body-heading);
   margin-top: 0px;
   line-height: 1.5;
@@ -240,7 +281,7 @@ ul {
 }
 
 p {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-primary);
   font-weight: 400;
   font-size: 16px;
   line-height: 27px;
@@ -2957,7 +2998,7 @@ only screen and (min-width: 768px) and (max-width: 991px),
   font-weight: 500;
   text-transform: capitalize;
   color: var(--common-black);
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-primary);
   background-color: var(--light-white);
   border-radius: 5px;
   padding: 4px 20px;

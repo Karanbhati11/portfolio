@@ -38,7 +38,7 @@ export default function Contact() {
                     {/* Your other JSX */}
                     <div className="section-wrapper pr-60 pl-60 mb-60">
                          <div className="contact-area bg-light-white-2">
-                              <h5 className="contact-title">I'm always open to discussing produuct</h5>
+                              <h5 className="contact-title">I'm always open to discussing product</h5>
                               <h5 className="contact-title-b">design work or partnerships.</h5>
                               <form className="contact-form" onSubmit={handleSubmit}>
                                    <div class="form-input-item mb-60">

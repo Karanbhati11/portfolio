@@ -2,6 +2,25 @@ import React from 'react'
 import ParsonImg1 from "../assets/img/parsonal-info/parson-img-1.png";
 
 export default function ParsonalInfo() {
+     const name = "Ankit Pakhale"
+     const position = "Python Fullstack Developer"
+     const phone = "+91 940 732 8187"
+     const email = "akp3067@mail.com"
+     const mailSubject = 'Opportunity Discussion: Your Impressive Profile';
+     const mailBody = encodeURIComponent(`Hello ${name.split(" ")[ 0 ]},\n\nYour profile has caught our attention, and we're intrigued. We'd like to schedule a discussion to learn more about your experience and skills. \n\nLooking forward to connecting with you. \n\nThank you.`);
+     const location = "Ahmedabad, GJ, India"
+     const birthday = "Mar 10, 2000"
+
+     const handleDownload = () => {
+          const cvUrl = 'https://drive.google.com/uc?export=download&id=1bvGp4VD9lLik_9UIMTcH3-I2WQ0DIcHE';
+          const link = document.createElement('a');
+          link.href = cvUrl;
+          link.setAttribute('download', 'CV.pdf');
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+     };
+
      return (
           <div className="col-xxl-3 col-xl-3">
                <div className="bostami-parsonal-info-area">
@@ -13,10 +32,10 @@ export default function ParsonalInfo() {
 
                          {/* name */}
                          <h4 className="bostami-parsonal-info-name">
-                              <a href="#">Ankit Pakhale</a>
+                              <a href="#">{name}</a>
                          </h4>
                          <span className="bostami-parsonal-info-bio mb-15">
-                              Python Fullstack Developer
+                              {position}
                          </span>
 
                          {/* socail link */}
@@ -51,7 +70,7 @@ export default function ParsonalInfo() {
                                    </div>
                                    <div className="text">
                                         <span>Phone</span>
-                                        <p>+91 940 732 8187</p>
+                                        <p>{phone}</p>
                                    </div>
                               </div>
 
@@ -62,7 +81,11 @@ export default function ParsonalInfo() {
                                    </div>
                                    <div className="text">
                                         <span>Email</span>
-                                        <p><a href="mailto:akp3067@mail.com?subject=We%20want%20to%20hire%20you.&body=Hi%20Ankit,%0D%0A%0D%0AWe%20found%20your%20profile%20interesting.%20When%20might%20you%20be%20free%20to%20talk%20about%20the%20stages%20of%20the%20hiring%20process%3F%0D%0AThanks">akp3067@mail.com</a></p>
+                                        <p>
+                                             <a href={`mailto:${email}?subject=${mailSubject}&body=${mailBody}`}>
+                                                  {email}
+                                             </a>
+                                        </p>
                                    </div>
                               </div>
 
@@ -73,7 +96,7 @@ export default function ParsonalInfo() {
                                    </div>
                                    <div className="text">
                                         <span>Location</span>
-                                        <p>Ahmedabad, GJ, India</p>
+                                        <p>{location}</p>
                                    </div>
                               </div>
 
@@ -83,19 +106,27 @@ export default function ParsonalInfo() {
                                    </div>
                                    <div className="text">
                                         <span>Birthday</span>
-                                        <p>Mar 10, 2000</p>
+                                        <p>{birthday}</p>
                                    </div>
                               </div>
                          </div>
 
                          {/* cv button */}
-                         <div className="bostami-parsonal-info-btn">
+                         {/* <div className="bostami-parsonal-info-btn">
                               <a className="btn-1" href="#">
                                    <span className="icon">
                                         <i className="fa-regular fa-download"></i>
                                    </span>
                                    download cv
                               </a>
+                         </div> */}
+                         <div className="bostami-parsonal-info-btn">
+                              <button className="btn-1" onClick={handleDownload}>
+                                   <span className="icon">
+                                        <i className="fa-regular fa-download"></i>
+                                   </span>
+                                   Download CV
+                              </button>
                          </div>
                     </div>
                </div>
