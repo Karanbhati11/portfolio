@@ -12,7 +12,7 @@ export default function ParsonalInfo() {
      const birthday = "Mar 10, 2000"
 
      const handleDownload = () => {
-          const cvUrl = 'https://drive.google.com/uc?export=download&id=1bvGp4VD9lLik_9UIMTcH3-I2WQ0DIcHE';
+          const cvUrl = 'https://drive.google.com/uc?export=download&id=1QTn3fs40HvivR3qf6dcsbikrTLsqMib2';
           const link = document.createElement('a');
           link.href = cvUrl;
           link.setAttribute('download', 'CV.pdf');

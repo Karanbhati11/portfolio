@@ -9,6 +9,43 @@ import skillData from '../Jsons/skillData.json'
 import knowledgeData from '../Jsons/knowledgeData.json'
 
 export default function Resume() {
+     function calculateExperience(jsonData) {
+          const currentDate = new Date(2024, 2, 5); // March 5, 2024
+          let totalMonths = 0;
+
+          // Loop through each entry in the JSON data starting from index 1
+          for (let i = 1; i < jsonData.length; i++) {
+               const entry = jsonData[ i ];
+
+               // Check if the tenure string has the expected format
+               const tenureMatch = entry.tenure.match(/(\w{3} \d{4})/g);
+               if (tenureMatch && tenureMatch.length === 2) {
+                    // Extract start and end dates from the tenure string
+                    const startDate = new Date(tenureMatch[ 0 ]);
+                    const endDate = tenureMatch[ 1 ].includes("Present") ? currentDate : new Date(tenureMatch[ 1 ]);
+
+                    // Calculate the difference in months
+                    const diffMonths = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth());
+
+                    // Add the difference to total months
+                    totalMonths += diffMonths;
+               }
+          }
+
+          // Convert total months to years and remaining months
+          const years = Math.floor(totalMonths / 12);
+          const remainingMonths = totalMonths % 12;
+
+          // Convert remaining months to decimal part of years
+          const decimalPart = remainingMonths / 12;
+
+          // Return the total experience in the desired format
+          return `${years + parseFloat(decimalPart.toFixed(2))} yrs`;
+     }
+
+
+
+
      return (
           <div className="col-xxl-8 col-xl-9">
                <div className="bostami-page-content-wrap">
@@ -45,7 +82,7 @@ export default function Resume() {
                               {/* experience  */}
                               <div className="col-xl-6 col-lg-5">
                                    <div className="bostami-section-title-wrap mb-20">
-                                        <h4 className="section-title"><i className="fa-light fa-briefcase"></i>experience</h4>
+                                        <h4 className="section-title"><i className="fa-light fa-briefcase"></i>experience {calculateExperience(experienceData)}</h4>
                                    </div>
                                    {experienceData.map((data, index) => (
                                         <Experience
@@ -90,8 +127,8 @@ export default function Resume() {
                                    </div>
 
                                    <div className="knowledeges-item-wrap">
-                                        {skillData.map((data, index) => (
-                                             <span key={index} className="gk-item">{data.title}</span>
+                                        {knowledgeData.map((data, index) => (
+                                             <span key={index} className="gk-item">{data}</span>
                                         ))}
                                    </div>
                               </div>

@@ -1,42 +1,22 @@
 [
      {
           "title": "Python",
-          "percentage": "85",
-          "className": "progress-bg-2"
-     },
-     {
-          "title": "Machine Learning",
-          "percentage": "78",
-          "className": "progress-bg-1"
-     },
-     {
-          "title": "Deep Learning",
-          "percentage": "80",
-          "className": "progress-bg-3"
-     },
-     {
-          "title": "Computer Vision",
-          "percentage": "92",
-          "className": "progress-bg-4"
-     },
-     {
-          "title": "Natural Language Processing",
-          "percentage": "76",
-          "className": "progress-bg-2"
-     },
-     {
-          "title": "Django",
           "percentage": "90",
           "className": "progress-bg-1"
      },
      {
-          "title": "JavaScript",
-          "percentage": "70",
+          "title": "Django",
+          "percentage": "85",
+          "className": "progress-bg-2"
+     },
+     {
+          "title": "AWS",
+          "percentage": "85",
           "className": "progress-bg-3"
      },
      {
           "title": "React JS",
-          "percentage": "85",
+          "percentage": "80",
           "className": "progress-bg-4"
      }
 ]
