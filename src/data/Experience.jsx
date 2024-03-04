@@ -1,22 +1,27 @@
 import React from 'react';
 
-// Component for rendering experience section
-const Experience = ({ data }) => (
-     <div className="col-xl-6 col-lg-5">
-          <div className="bostami-section-title-wrap mb-20">
-               <h4 className="section-title"><i className="fa-light fa-briefcase"></i>Experience</h4>
-          </div>
-          <div className="bostami-card-item-wrap">
-               {/* Mapping over experience data to render individual experience items */}
-               {data.map((item, index) => (
-                    <div key={index} className="bostami-card-item bg-catkrill mb-20">
-                         <span className="card-subtitle">{item.duration}</span>
-                         <h6 className="card-title">{item.title}</h6>
-                         <p className="card-text">{item.company}</p>
+export default function Experience({ index, tenure, position, company, projects }) {
+     const backgroundColorClass = index % 2 === 0 ? 'bg-prink' : 'bg-catkrill';
+
+     return (
+          <div className={`bostami-card-item ${backgroundColorClass} mb-20`}>
+               <span className="card-subtitle">{tenure}</span>
+               <h6 className="card-title">{position}</h6>
+               <p className="card-text">{company}</p>
+               {projects && projects.map((project, i) => (
+                    <div key={i}>
+                         <br />
+                         {
+                              project.name &&
+                              <h6>project: {project.name}</h6>
+                         }
+                         <ul style={{ listStyleType: 'disc' }}>
+                              {project.highlights.map((highlight, j) => (
+                                   <li key={j}>{highlight}</li>
+                              ))}
+                         </ul>
                     </div>
                ))}
           </div>
-     </div>
-);
-
-export default Experience;
+     );
+}

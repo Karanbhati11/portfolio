@@ -1,17 +1,73 @@
 [
      {
-          "tenure": "2019 - Present",
-          "position": "Sr. Software Tester",
-          "company": "Google Inc."
+          "tenure": "Jul 2023 - Present",
+          "position": "Python Developer",
+          "company": "Swan Softweb Solutions Pvt Ltd.",
+          "projects": [
+               {
+                    "name": "Common Cents",
+                    "highlights": [
+                         "Data retrieval: Redshift to UI",
+                         "Automated ETL process with Lambda",
+                         "Document data extraction, storage"
+                    ]
+               },
+               {
+                    "name": "Expertly",
+                    "highlights": [
+                         "LLMs: enhanced functionality",
+                         "Microservice architecture: microkernel",
+                         "Custom Django framework: development"
+                    ]
+               }
+          ]
      },
      {
-          "tenure": "2015-2017",
-          "position": "Cr. Web Developer",
-          "company": "elite-themes24 ltd."
+          "tenure": "Jan 2022 - Jun 2023",
+          "position": "Python Developer",
+          "company": "Digital Documentation Systems Pvt Ltd.",
+          "projects": [
+               {
+                    "highlights": [
+                         "Deep Learning: text detection",
+                         "Efficient data extraction APIs",
+                         "Seamless data transmission to Tally"
+                    ]
+               },
+               {
+                    "highlights": [
+                         "B2B module: React.js",
+                         "Credit/Debit Note module integration",
+                         "Tally integration via XML"
+                    ]
+               }
+          ]
      },
      {
-          "tenure": "2014 - 2015",
-          "position": "Jr. Web Developer",
-          "company": "Creative Gigs."
+          "tenure": "Jun 2021 - Dec 2021",
+          "position": "Intern",
+          "company": "BrainyBeam Technologies Pvt Ltd.",
+          "projects": [
+               {
+                    "highlights": [
+                         "AI chatbot: Aadhar dataset",
+                         "Bus booking system: engineering"
+                    ]
+               }
+          ]
+     },
+     {
+          "tenure": "May 2020 - May 2021",
+          "position": "Intern",
+          "company": "Silverwing Technologies Pvt Ltd.",
+          "projects": [
+               {
+                    "highlights": [
+                         "Android Development: Core Java",
+                         "Web development: HTML, CSS, JavaScript",
+                         "Cyber Security & Microsoft Azure workshops"
+                    ]
+               }
+          ]
      }
 ]

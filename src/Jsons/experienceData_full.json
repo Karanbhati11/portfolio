@@ -1,0 +1,84 @@
+[
+     {
+          "tenure": "Jul 2023 - Present",
+          "position": "Python Developer",
+          "company": "Swan Softweb Solutions Pvt Ltd, Ahmedabad",
+          "projects": [
+               {
+                    "name": "Common Cents",
+                    "highlights": [
+                         "Developed an end-to-end system to retrieve data from AWS Redshift to frontend UI.",
+                         "Implemented an automated ETL process triggered by Lambda functions upon document storage in AWS S3 bucket.",
+                         "Designed and executed extraction of data from documents and storage in Parquet file format.",
+                         "Managed storage of Parquet files in Redshift data warehouse."
+                    ]
+               },
+               {
+                    "name": "Expertly",
+                    "highlights": [
+                         "Leveraged state-of-the-art Large Language Models (LLMs) as a core component of Expertly's functionality, harnessing their natural language processing capabilities to enhance user interactions, automate tasks, and improve decision-making processes.",
+                         "Engineered a robust microservice architecture, also known as microkernel architecture.",
+                         "Established a custom framework, Common Toolkit, using Django framework to streamline development.",
+                         "Integrated Common Backend and Common Toolkit as core components of the system.",
+                         "Orchestrated the creation and registration of services using Common Toolkit and Common Backend.",
+                         "Implemented a routing mechanism where requests are first handled by Common Backend and then directed to the appropriate service's backend."
+                    ]
+               }
+          ]
+     },
+     {
+          "tenure": "Jan 2022 - Jun 2023",
+          "position": "Python Developer",
+          "company": "Digital Documentation Systems Pvt Ltd., Ahmedabad",
+          "projects": [
+               {
+                    "highlights": [
+                         "Developed a Deep Learning model to enhance text detection accuracy from Devanagari Manuscripts by 90%."
+                    ]
+               },
+               {
+                    "highlights": [
+                         "Implemented APIs in Django with NumPy, Pandas, and Borb for efficient extraction of Bank Statement and Invoice data."
+                    ]
+               },
+               {
+                    "highlights": [
+                         "Engineered a Windows service for seamless transmission of extracted data to Tally Prime for accounting purposes."
+                    ]
+               },
+               {
+                    "highlights": [
+                         "Created an end-to-end B2B and Credit/Debit Note module using React.js and Django, integrated with Tally via XML for streamlined financial transactions."
+                    ]
+               }
+          ]
+     },
+     {
+          "tenure": "Jun 2021 - Dec 2021",
+          "position": "Intern",
+          "company": "BrainyBeam Technologies Pvt. Ltd., Ahmedabad",
+          "projects": [
+               {
+                    "highlights": [
+                         "Acquired proficiency in SQL and Django frameworks.",
+                         "Developed an AI chatbot utilizing Aadhar card dataset.",
+                         "Engineered a bus booking system."
+                    ]
+               }
+          ]
+     },
+     {
+          "tenure": "May 2020 - May 2021",
+          "position": "Intern",
+          "company": "Silverwing Technologies Pvt Ltd, Ahmedabad., Ahmedabad",
+          "projects": [
+               {
+                    "highlights": [
+                         "Acquired knowledge in Android Development, including Core Java programming for Android applications.",
+                         "Learned HTML, CSS, JavaScript and Bootstrap, gaining proficiency in multiple technologies for web development.",
+                         "Participated in workshops on Cyber Security & Microsoft Azure for gaining knowledge and improving skills."
+                    ]
+               }
+          ]
+     }
+]

@@ -1,6 +1,7 @@
 import React from 'react'
 import Copyright from './Copyright'
-import ResumeBox from '../data/ResumeBox'
+import Education from '../data/Education'
+import Experience from '../data/Experience'
 import SkillBar from '../data/SkillBar'
 import educationData from '../Jsons/educationData.json'
 import experienceData from '../Jsons/experienceData.json'
@@ -30,7 +31,7 @@ export default function Resume() {
 
                                    <div className="bostami-card-wrap">
                                         {educationData.map((data, index) => (
-                                             <ResumeBox
+                                             <Education
                                                   key={index}
                                                   index={index}
                                                   tenure={data.tenure}
@@ -41,18 +42,19 @@ export default function Resume() {
                                    </div>
                               </div>
 
-                              {/* education  */}
+                              {/* experience  */}
                               <div className="col-xl-6 col-lg-5">
                                    <div className="bostami-section-title-wrap mb-20">
                                         <h4 className="section-title"><i className="fa-light fa-briefcase"></i>experience</h4>
                                    </div>
                                    {experienceData.map((data, index) => (
-                                        <ResumeBox
+                                        <Experience
                                              key={index}
                                              index={index + 1}
                                              tenure={data.tenure}
-                                             title={data.position}
-                                             subtitle={data.company}
+                                             position={data.position}
+                                             company={data.company}
+                                             projects={data.projects}
                                         />
                                    ))}
                               </div>
@@ -88,8 +90,8 @@ export default function Resume() {
                                    </div>
 
                                    <div className="knowledeges-item-wrap">
-                                        {knowledgeData.map((data, index) => (
-                                             <span key={index} className="gk-item">{data}</span>
+                                        {skillData.map((data, index) => (
+                                             <span key={index} className="gk-item">{data.title}</span>
                                         ))}
                                    </div>
                               </div>
