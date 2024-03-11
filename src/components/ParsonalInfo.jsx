@@ -41,8 +41,13 @@ export default function ParsonalInfo() {
                          {/* socail link */}
                          <ul className="bostami-parsonal-info-social-link mb-30">
                               <li>
-                                   <a href="https://www.facebook.com/akp0745" target="_blank" className="facebook">
-                                        <i className="fa-brands fa-facebook-f"></i>
+                                   <a href="https://github.com/ankitpakhale/" target="_blank" className="github">
+                                        <i className="fa-brands fa-github"></i>
+                                   </a>
+                              </li>
+                              <li>
+                                   <a href="https://www.linkedin.com/in/ankitpakhale/" target="_blank" className="linkedin">
+                                        <i className="fa-brands fa-linkedin-in"></i>
                                    </a>
                               </li>
                               <li>
@@ -53,11 +58,6 @@ export default function ParsonalInfo() {
                               <li>
                                    <a href="https://www.instagram.com/ankitpakhale_/" target="_blank" className="instagram">
                                         <i className="fa-brands fa-instagram"></i>
-                                   </a>
-                              </li>
-                              <li>
-                                   <a href="https://www.linkedin.com/in/ankitpakhale/" target="_blank" className="linkedin">
-                                        <i className="fa-brands fa-linkedin-in"></i>
                                    </a>
                               </li>
                          </ul>
