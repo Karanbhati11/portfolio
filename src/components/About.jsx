@@ -22,15 +22,10 @@ export default function About() {
                          <div className="bostami-page-title-wrap mb-35">
                               <h2 className="page-title">about</h2>
                               <p>
-                                   I'm Creative Director and UI/UX Designer from Sydney,
-                                   Australia, working in web development and print media. I
-                                   enjoy turning complex problems into simple, beautiful and
-                                   intuitive designs.
+                                   With over three years of experience in Python development, including expertise in Django, AWS, and Deep Learning, I've led successful projects at multiple organizations, leveraging cutting-edge technologies to enhance user interactions and automate tasks. Skilled in microservice architecture and API integration, I bring a robust skill set to drive innovation and efficiency.
                               </p>
                               <p>
-                                   My aim is to bring across your message and identity in the
-                                   most creative way. I created web design for many famous
-                                   brand companies.
+                                   As a Python Developer, I've demonstrated proficiency in Python, AWS & Django, contributing to many projects, where I've optimized text detection accuracy and engineered end-to-end systems for data retrieval and processing. Passionate about interactive projects, I've developed applications utilizing OpenCV and Hand Tracking Modules, showcasing my commitment to leveraging technology for intuitive user experiences.
                               </p>
                          </div>
                     </div>
@@ -57,7 +52,7 @@ export default function About() {
                     </div>
 
                     {/* <!-- client --> */}
-                    <div className="section-wrapper bg-light-white-2 pt-45 pb-60 pl-60 pr-60">
+                    {/* <div className="section-wrapper bg-light-white-2 pt-45 pb-60 pl-60 pr-60">
                          <div className="bostami-section-title-wrap text-center mb-50">
                               <h3 className="section-title">clinet</h3>
                          </div>
@@ -65,7 +60,7 @@ export default function About() {
                          <div className="bostami-client-slider">
                               <div className="swiper-container client_slide_active">
                                    <div className="swiper-wrapper">
-                                        {/* <div className="swiper-slide">
+                                        <div className="swiper-slide">
                                              <img
                                                   className="bostami-client-slider-logo"
                                                   src={ClientLogo1}
@@ -95,13 +90,13 @@ export default function About() {
                                                   src={ClientLogo4}
                                                   alt=""
                                              />
-                                        </div> */}
+                                        </div>
 
                                         <ClientLogoSlider logos={clientLogoData} />
                                    </div>
                               </div>
                          </div>
-                    </div>
+                    </div> */}
 
                     {/* <!-- footer copyright --> */}
                     <Copyright />
