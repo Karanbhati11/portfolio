@@ -1,5 +1,11 @@
 import React from "react";
 import Copyright from "./Copyright";
+import portfolioImg1 from "../assets/img/work/work-img-1.png";
+import portfolioImg2 from "../assets/img/work/work-img-2.png";
+import portfolioImg3 from "../assets/img/work/work-img-3.png";
+import portfolioImg4 from "../assets/img/work/work-img-4.png";
+import portfolioImg5 from "../assets/img/work/work-img-5.png";
+import portfolioImg6 from "../assets/img/work/work-img-6.png";
 
 export default function Portfolio({ openModal }) {
   const handleImageClick = () => {
@@ -7,53 +13,51 @@ export default function Portfolio({ openModal }) {
   };
 
   return (
-    <div class="col-xxl-8 col-xl-9">
-      <div class="bostami-page-content-wrap">
+    <div className="col-xxl-8 col-xl-9">
+      <div className="bostami-page-content-wrap">
         {/* page title  */}
-        <div class="section-wrapper pl-60 pr-60 pt-60">
-          <div class="bostami-page-title-wrap mb-15">
-            <h2 class="page-title">Portfolio</h2>
+        <div className="section-wrapper pl-60 pr-60 pt-60">
+          <div className="bostami-page-title-wrap mb-15">
+            <h2 className="page-title">Portfolio</h2>
           </div>
         </div>
 
-        <div class="section-wrapper pr-60 pl-60 mb-60">
-          <div class="row">
-            <div class="col-12">
-              <ul class="fillter-btn-wrap buttonGroup isotop-menu-wrapper mb-30">
-                <li class="fillter-btn is-checked " data-filter="*">
+        <div className="section-wrapper pr-60 pl-60 mb-60">
+          <div className="row">
+            <div className="col-12">
+              <ul className="fillter-btn-wrap buttonGroup isotop-menu-wrapper mb-30">
+                <li className="fillter-btn is-checked" data-filter="*">
                   All
                 </li>
-                <li class="fillter-btn" data-filter=".mockup">
+                <li className="fillter-btn" data-filter=".mockup">
                   Mockup
                 </li>
-                <li class="fillter-btn" data-filter=".design">
-                  {" "}
+                <li className="fillter-btn" data-filter=".design">
                   Graphic Design
                 </li>
-                <li class="fillter-btn" data-filter=".logo">
-                  {" "}
-                  logo
+                <li className="fillter-btn" data-filter=".logo">
+                  Logo
                 </li>
               </ul>
             </div>
 
-            <div class="col-12">
-              <div id="fillter-item-active" class="fillter-item-wrap">
-                <div class="grid-sizer"></div>
+            <div className="col-12">
+              <div id="fillter-item-active" className="fillter-item-wrap row">
+                {/* <div className="grid-sizer"></div> */}
 
-                {/* signle item  */}
-                <div onClick={handleImageClick} class=" isotop-item  logo">
-                  <div class="fillter-item bg-prink">
+                {/* Single item 1 */}
+                <div onClick={handleImageClick} className="isotop-item logo col-12 col-md-6">
+                  <div className="fillter-item bg-prink">
                     <a
-                      class="img"
+                      className="img"
                       href="#"
                       data-bs-toggle="modal"
                       data-bs-target="#portfolio-1"
                     >
-                      <img src="assets/img/work/work-img-1.png" alt="" />
+                      <img src={portfolioImg1} alt="" />
                     </a>
-                    <span class="item-subtitle">Travel Landing , UX/UI </span>
-                    <h6 class="item-title">
+                    <span className="item-subtitle">Travel Landing, UX/UI</span>
+                    <h6 className="item-title">
                       <a
                         href="#"
                         data-bs-toggle="modal"
@@ -65,26 +69,23 @@ export default function Portfolio({ openModal }) {
                   </div>
                 </div>
 
-                {/* signle item  */}
-                <div
-                  onClick={handleImageClick}
-                  class=" isotop-item design mockup"
-                >
-                  <div class="fillter-item bg-catkrill">
+                {/* Single item 2 */}
+                <div onClick={handleImageClick} className="isotop-item design mockup col-12 col-md-6">
+                  <div className="fillter-item bg-catkrill">
                     <a
-                      class="img"
+                      className="img"
                       href="#"
                       data-bs-toggle="modal"
-                      data-bs-target="#portfolio-1"
+                      data-bs-target="#portfolio-2"
                     >
-                      <img src="assets/img/work/work-img-2.png" alt="" />
+                      <img src={portfolioImg2} alt="" />
                     </a>
-                    <span class="item-subtitle">Travel Landing , UX/UI </span>
-                    <h6 class="item-title">
+                    <span className="item-subtitle">Travel Landing, UX/UI</span>
+                    <h6 className="item-title">
                       <a
                         href="#"
                         data-bs-toggle="modal"
-                        data-bs-target="#portfolio-1"
+                        data-bs-target="#portfolio-2"
                       >
                         Aura Dione
                       </a>
@@ -92,26 +93,23 @@ export default function Portfolio({ openModal }) {
                   </div>
                 </div>
 
-                {/* signle item  */}
-                <div
-                  onClick={handleImageClick}
-                  class=" isotop-item logo mockup"
-                >
-                  <div class="fillter-item bg-catkrill ">
+                {/* Single item 3 */}
+                <div onClick={handleImageClick} className=" isotop-item logo mockup col-12 col-md-6">
+                  <div className="fillter-item bg-catkrill">
                     <a
-                      class="img"
+                      className="img"
                       href="#"
                       data-bs-toggle="modal"
-                      data-bs-target="#portfolio-1"
+                      data-bs-target="#portfolio-3"
                     >
-                      <img src="assets/img/work/work-img-3.png" alt="" />
+                      <img src={portfolioImg3} alt="" />
                     </a>
-                    <span class="item-subtitle">Travel Landing , UX/UI </span>
-                    <h6 class="item-title">
+                    <span className="item-subtitle">Travel Landing, UX/UI</span>
+                    <h6 className="item-title">
                       <a
                         href="#"
                         data-bs-toggle="modal"
-                        data-bs-target="#portfolio-1"
+                        data-bs-target="#portfolio-3"
                       >
                         T-Shirt Design
                       </a>
@@ -119,23 +117,23 @@ export default function Portfolio({ openModal }) {
                   </div>
                 </div>
 
-                {/* signle item  */}
-                <div onClick={handleImageClick} class=" isotop-item mockup">
-                  <div class="fillter-item bg-prink">
+                {/* Single item 4 */}
+                <div onClick={handleImageClick} className="isotop-item mockup col-12 col-md-6">
+                  <div className="fillter-item bg-prink">
                     <a
-                      class="img"
+                      className="img"
                       href="#"
                       data-bs-toggle="modal"
-                      data-bs-target="#portfolio-1"
+                      data-bs-target="#portfolio-4"
                     >
-                      <img src="assets/img/work/work-img-4.png" alt="" />
+                      <img src={portfolioImg4} alt="" />
                     </a>
-                    <span class="item-subtitle">Travel Landing , UX/UI </span>
-                    <h6 class="item-title">
+                    <span className="item-subtitle">Travel Landing, UX/UI</span>
+                    <h6 className="item-title">
                       <a
                         href="#"
                         data-bs-toggle="modal"
-                        data-bs-target="#portfolio-1"
+                        data-bs-target="#portfolio-4"
                       >
                         Packaging Box
                       </a>
@@ -143,23 +141,23 @@ export default function Portfolio({ openModal }) {
                   </div>
                 </div>
 
-                {/* signle item  */}
-                <div onClick={handleImageClick} class="isotop-item design logo">
-                  <div class="fillter-item bg-prink">
+                {/* Single item 5 */}
+                <div onClick={handleImageClick} className="isotop-item design logo col-12 col-md-6">
+                  <div className="fillter-item bg-prink">
                     <a
-                      class="img"
+                      className="img"
                       href="#"
                       data-bs-toggle="modal"
-                      data-bs-target="#portfolio-1"
+                      data-bs-target="#portfolio-5"
                     >
-                      <img src="assets/img/work/work-img-5.png" alt="" />
+                      <img src={portfolioImg5} alt="" />
                     </a>
-                    <span class="item-subtitle">Travel Landing , UX/UI </span>
-                    <h6 class="item-title">
+                    <span className="item-subtitle">Travel Landing, UX/UI</span>
+                    <h6 className="item-title">
                       <a
                         href="#"
                         data-bs-toggle="modal"
-                        data-bs-target="#portfolio-1"
+                        data-bs-target="#portfolio-5"
                       >
                         Modern Bag Design
                       </a>
@@ -167,26 +165,23 @@ export default function Portfolio({ openModal }) {
                   </div>
                 </div>
 
-                {/* signle item  */}
-                <div
-                  onClick={handleImageClick}
-                  class="isotop-item mockup design"
-                >
-                  <div class="fillter-item bg-catkrill">
+                {/* Single item 6 */}
+                <div onClick={handleImageClick} className="isotop-item mockup design col-12 col-md-6">
+                  <div className="fillter-item bg-catkrill">
                     <a
-                      class="img"
+                      className="img"
                       href="#"
                       data-bs-toggle="modal"
-                      data-bs-target="#portfolio-1"
+                      data-bs-target="#portfolio-6"
                     >
-                      <img src="assets/img/work/work-img-6.png" alt="" />
+                      <img src={portfolioImg6} alt="" />
                     </a>
-                    <span class="item-subtitle">Travel Landing , UX/UI </span>
-                    <h6 class="item-title">
+                    <span className="item-subtitle">Travel Landing, UX/UI</span>
+                    <h6 className="item-title">
                       <a
                         href="#"
                         data-bs-toggle="modal"
-                        data-bs-target="#portfolio-1"
+                        data-bs-target="#portfolio-6"
                       >
                         Chul urina
                       </a>
