@@ -12,7 +12,7 @@ export default function ParsonalInfo() {
      const birthday = "Mar 10, 2000"
 
      const handleDownload = () => {
-          const cvUrl = 'https://drive.google.com/uc?export=download&id=1QTn3fs40HvivR3qf6dcsbikrTLsqMib2';
+          const cvUrl = 'https://drive.google.com/uc?export=download&id=1Q6vlGhJ6lYeTftkBWA9K6P_gxe7CRC73';
           const link = document.createElement('a');
           link.href = cvUrl;
           link.setAttribute('download', 'CV.pdf');
@@ -41,22 +41,22 @@ export default function ParsonalInfo() {
                          {/* socail link */}
                          <ul className="bostami-parsonal-info-social-link mb-30">
                               <li>
-                                   <a href="#" className="facebook">
+                                   <a href="https://www.facebook.com/akp0745" target="_blank" className="facebook">
                                         <i className="fa-brands fa-facebook-f"></i>
                                    </a>
                               </li>
                               <li>
-                                   <a href="#" className="twitter">
+                                   <a href="https://twitter.com/AnkitPakhale1" target="_blank" className="twitter">
                                         <i className="fa-brands fa-twitter"></i>
                                    </a>
                               </li>
                               <li>
-                                   <a href="#" className="instagram">
+                                   <a href="https://www.instagram.com/ankitpakhale_/" target="_blank" className="instagram">
                                         <i className="fa-brands fa-instagram"></i>
                                    </a>
                               </li>
                               <li>
-                                   <a href="#" className="linkedin">
+                                   <a href="https://www.linkedin.com/in/ankitpakhale/" target="_blank" className="linkedin">
                                         <i className="fa-brands fa-linkedin-in"></i>
                                    </a>
                               </li>

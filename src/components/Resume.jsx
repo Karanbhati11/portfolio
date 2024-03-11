@@ -9,6 +9,7 @@ import skillData from '../Jsons/skillData.json'
 import knowledgeData from '../Jsons/knowledgeData.json'
 
 export default function Resume() {
+     // TODO: fix this
      function calculateExperience(jsonData) {
           const currentDate = new Date(2024, 2, 5); // March 5, 2024
           let totalMonths = 0;
