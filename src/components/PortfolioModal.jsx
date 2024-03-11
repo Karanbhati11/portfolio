@@ -48,7 +48,7 @@ export default function PortfolioModal({ modalOpen, closeModal }) {
                 <div class="col-md-6">
                   <h3 class="portfolio-modal-table-text">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    Preview : <a href="#">www.envato.com</a>
+                    Preview : <a href="#">www.google.com</a>
                   </h3>
                 </div>
               </div>
