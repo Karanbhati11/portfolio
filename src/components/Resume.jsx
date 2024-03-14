@@ -9,42 +9,30 @@ import skillData from '../Jsons/skillData.json'
 import knowledgeData from '../Jsons/knowledgeData.json'
 
 export default function Resume() {
-     // TODO: fix this
-     function calculateExperience(jsonData) {
-          const currentDate = new Date(2024, 2, 5); // March 5, 2024
-          let totalMonths = 0;
+     // TODO: make startDate dynamic based on json data
+     function calculateExperience(data) {
+          // exclude the last index
+          data.pop();
 
-          // Loop through each entry in the JSON data starting from index 1
-          for (let i = 1; i < jsonData.length; i++) {
-               const entry = jsonData[ i ];
+          // get today's date
+          const today = new Date();
+          const todayYear = today.getFullYear();
+          const todayMonth = today.getMonth() + 1; // month is zero-based
 
-               // Check if the tenure string has the expected format
-               const tenureMatch = entry.tenure.match(/(\w{3} \d{4})/g);
-               if (tenureMatch && tenureMatch.length === 2) {
-                    // Extract start and end dates from the tenure string
-                    const startDate = new Date(tenureMatch[ 0 ]);
-                    const endDate = tenureMatch[ 1 ].includes("Present") ? currentDate : new Date(tenureMatch[ 1 ]);
+          // date of May 2021
+          const startDate = new Date('May 2021');
 
-                    // Calculate the difference in months
-                    const diffMonths = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth());
+          // calculate the difference in years and months
+          let totalMonths = (todayYear - startDate.getFullYear()) * 12;
+          totalMonths -= startDate.getMonth() + 1; // months before the current month
+          totalMonths += todayMonth; // months of the current year
 
-                    // Add the difference to total months
-                    totalMonths += diffMonths;
-               }
-          }
-
-          // Convert total months to years and remaining months
+          // convert totalMonths to years and months
           const years = Math.floor(totalMonths / 12);
-          const remainingMonths = totalMonths % 12;
+          const months = totalMonths % 12;
 
-          // Convert remaining months to decimal part of years
-          const decimalPart = remainingMonths / 12;
-
-          // Return the total experience in the desired format
-          return `${years + parseFloat(decimalPart.toFixed(2))} yrs`;
+          return `${years}yr ${months}M`;
      }
-
-
 
 
      return (
