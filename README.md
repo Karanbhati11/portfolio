@@ -52,19 +52,19 @@ This is a personal portfolio website built using React. It showcases my projects
 
 ## Known Issues
 
-- [Hamburger]: [Hamburger icon in mobile view]
+- Hamburger: Hamburger icon in mobile view
 
-- [Background]: [Background image is not visible in deployed site]
+- Background: Background image is not visible in deployed site
 
-- [Routers]: [Individual routers for each page]
+- Routers: Individual routers for each page
 
-- [Experience]: [In calculateExperience function make startDate dynamic based on json data]
+- Experience: In calculateExperience function make startDate dynamic based on json data
 
-- [API support]: [Add API support for loading all the json data from google drive]
+- API support: Add API support for loading all the json data from google drive
 
 ## Resolved Issues
 
-- [Issue 1]: [Description of the issue and how it was resolved]
+- Issue 1: Description of the issue and how it was resolved
 
 
 ## License
