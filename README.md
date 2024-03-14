@@ -1,4 +1,4 @@
-# My React Portfolio
+# My Portfolio
 
 This is a personal portfolio website built using React. It showcases my projects, skills, and provides information about me.
 
