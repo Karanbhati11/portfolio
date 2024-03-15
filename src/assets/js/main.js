@@ -47,12 +47,12 @@
   // meanmenu end
 
   // mobile menu start
-  // let menutoggole = document.querySelector(".toggle_menu");
-  // let mobilemenu = document.querySelector(".mobile-menu");
-  // menutoggole.onclick = function () {
-  //   menutoggole.classList.toggle("active");
-  //   mobilemenu.classList.toggle("active");
-  // };
+  let menutoggole = document.querySelector(".toggle_menu");
+  let mobilemenu = document.querySelector(".mobile-menu");
+  menutoggole.onclick = function () {
+    menutoggole.classList.toggle("active");
+    mobilemenu.classList.toggle("active");
+  };
   document.addEventListener("DOMContentLoaded", function () {
     document.body.addEventListener("click", function (event) {
       if (event.target.classList.contains("toggle_menu")) {
